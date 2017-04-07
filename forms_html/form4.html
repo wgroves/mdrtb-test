@@ -75,7 +75,6 @@
 			</div>
 
 			<label for="">Site of disease <i>(check all that apply):</i></label>
-
 			<div class="secondary-input">
 				<div class="form-group">
 					<input type="checkbox" name="site-of-disease-pulmonary" />
@@ -136,6 +135,187 @@
 					<input type="checkbox" name="site-of-disease-other-2" />
 		    		<label for="site-of-disease-other-2">Other Site 2</label>
 				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="">Initial chest radiograph:</label>
+				<div class="secondary-input">
+					<label for="chest-radiograph-date">Date of chest radiograph:</label>
+					<input type="text" name="chest-radiograph-date" />
+
+					<div class="form-group">
+						<label for="chest-radiograph-info">Signs of malnutrition present at diagnosis:</label>
+						<input type="radio" name="chest-radiograph-info" value="abnormal-consistent-with-tb" />Abnormal and consistent with TB
+						<input type="radio" name="chest-radiograph-info" value="abnormal-not-consistent-with-tb" />Abnormal and NOT consistent with TB
+						<input type="radio" name="chest-radiograph-info" value="normal" />Normal
+						<input type="radio" name="chest-radiograph-info" value="not-done" />Not done
+						<input type="radio" name="chest-radiograph-info" value="done-result-unknown" />Done but result unknown
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="">If <i>abnormal and consistent with TB</i>, indicate whether radiographic features in table below were present.</label>
+				<table>
+					<tr>
+						<th>Principal disease entity</th>
+						<th>Complications</th>
+					</tr>
+					<tr>
+						<td>
+							<select name="lung-parenchyma-ghon-focus">
+								<option value="present">Present</option>
+								<option value="not-present">Not present</option>
+								<option value="not-determined">Not determined</option>
+							</select>
+							<label>Lung parenchyma &ndash; Ghon focus</label>
+
+							<br />
+
+							<select name="lung-parenchyma-adult-type-disease">
+								<option value="present">Present</option>
+								<option value="not-present">Not present</option>
+								<option value="not-determined">Not determined</option>
+							</select>
+							<label>Lung parenchyma &ndash; Adult-type disease</label>
+						</td>
+						<td>
+							<select name="cavitation">
+								<option value="present">Present</option>
+								<option value="not-present">Not present</option>
+								<option value="not-determined">Not determined</option>
+							</select>
+							<label>Cavitation</label>
+
+							<br />
+
+							<select name="bronchopneumonic-consolidation">
+								<option value="present">Present</option>
+								<option value="not-present">Not present</option>
+								<option value="not-determined">Not determined</option>
+							</select>
+							<label>Bronchopneumonic consolidation</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<select name="lymph-node-disease">
+								<option value="present">Present</option>
+								<option value="not-present">Not present</option>
+								<option value="not-determined">Not determined</option>
+							</select>
+							<label>Lymph node disease</label>
+						</td>
+						<td>
+							<select name="bronchial-tracheal-compression">
+								<option value="present">Present</option>
+								<option value="not-present">Not present</option>
+								<option value="not-determined">Not determined</option>
+							</select>
+							<label>Bronchial and/or tracheal compression</label>
+
+							<br />
+
+							<select name="hyperinflation-or-collapse">
+								<option value="present">Present</option>
+								<option value="not-present">Not present</option>
+								<option value="not-determined">Not determined</option>
+							</select>
+							<label>Hyperinflation or collapse</label>
+
+							<br />
+
+							<select name="tracheo-or-broncheo-oesophageal-fistula">
+								<option value="present">Present</option>
+								<option value="not-present">Not present</option>
+								<option value="not-determined">Not determined</option>
+							</select>
+							<label>Tracheo- or broncheo-oesophageal fistula</label>
+
+							<br />
+
+							<select name="chylothorax">
+								<option value="present">Present</option>
+								<option value="not-present">Not present</option>
+								<option value="not-determined">Not determined</option>
+							</select>
+							<label>Chylothorax</label>
+
+							<br />
+
+							<select name="diaphragmatic-palsy">
+								<option value="present">Present</option>
+								<option value="not-present">Not present</option>
+								<option value="not-determined">Not determined</option>
+							</select>
+							<label>Diaphragmatic palsy</label>
+
+							<br />
+
+							<select name="alveolar-consolidation">
+								<option value="present">Present</option>
+								<option value="not-present">Not present</option>
+								<option value="not-determined">Not determined</option>
+							</select>
+							<label>Alveolar consolidation</label>
+
+							<br />
+
+							<select name="bronchopneumonic-consolidation">
+								<option value="present">Present</option>
+								<option value="not-present">Not present</option>
+								<option value="not-determined">Not determined</option>
+							</select>
+							<label>Bronchopneumonic consolidation</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<select name="pleural-effusion">
+								<option value="present">Present</option>
+								<option value="not-present">Not present</option>
+								<option value="not-determined">Not determined</option>
+							</select>
+							<label>Pleural effusion</label>
+						</td>
+						<td>
+							<select name="tuberculous-empyema">
+								<option value="present">Present</option>
+								<option value="not-present">Not present</option>
+								<option value="not-determined">Not determined</option>
+							</select>
+							<label>Tuberculous empyema</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<select name="pericardial-effusion">
+								<option value="present">Present</option>
+								<option value="not-present">Not present</option>
+								<option value="not-determined">Not determined</option>
+							</select>
+							<label>Pericardial effusion</label>
+						</td>
+						<td>
+							<select name="pneumothorax">
+								<option value="present">Present</option>
+								<option value="not-present">Not present</option>
+								<option value="not-determined">Not determined</option>
+							</select>
+							<label>Pneumothorax</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<select name="disseminated-military-disease">
+								<option value="present">Present</option>
+								<option value="not-present">Not present</option>
+								<option value="not-determined">Not determined</option>
+							</select>
+							<label>Disseminated (military) disease</label>
+						</td>
+					</tr>
+				</table>
 			</div>
 		</form>
 	</body>
