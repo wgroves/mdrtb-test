@@ -6,3 +6,5 @@ Required and optional form elements
 Form pages that come up only if certain checkboxes are checked (2B and 2C)
 
 Think about special behavior for name="" and value="" for radio buttons and checkboxes during POSTing
+
+Decide how to represent hierarchical inputs (example: several indented checkbox under one heading checkbox on form 2
