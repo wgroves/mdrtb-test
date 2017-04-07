@@ -1,0 +1,2 @@
+Decide what to do with date inputs (input type="date" is HTML5, there are JS solutions, etc)
+
