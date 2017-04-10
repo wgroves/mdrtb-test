@@ -1,6 +1,5 @@
 Decide what to do with date inputs (input type="date" is HTML5, there are JS solutions, etc)
 
-
 Required and optional form elements
 
 Form pages that come up only if certain checkboxes are checked (2B and 2C)
@@ -12,3 +11,7 @@ Decide how to represent hierarchical inputs (example: several indented checkbox 
 Popup on form 3
 
 <select>s probably shouldn't default to Present, e.g. form 4
+
+Radio button arrays with an "other" text input option -- probably JS
+
+
