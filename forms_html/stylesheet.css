@@ -9,3 +9,15 @@ tr.blank-row {
 .label-italic {
     font-style: italic;
 }
+
+td {
+	vertical-align: top;
+}
+
+table, th, td {
+	border: 1px solid black;
+}
+
+table {
+	border-collapse: collapse;
+}
