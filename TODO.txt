@@ -20,4 +20,6 @@ Continue buttons (back? etc) and all navigation logic
 
 Name and date formats adjusting to locale (dates stored as epoch for sorting, displayed per locale works)
 
+Databse encoding allows for many languages
+
 
