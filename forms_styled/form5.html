@@ -1,0 +1,367 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+	</head>
+	<body>
+		<h1>5: Initial Laboratory Results</h1>
+		<form>
+			<div class="form-group">
+				<label for="">Smear:</label>
+				<div class="secondary-input">
+					<div class="form-group">
+						<input type="radio" name="smear-done" value="positive" />Positive
+				    	<input type="radio" name="smear-done" value="negative" />Negative
+				    	<input type="radio" name="smear-done" value="not-done" />Not done
+				    </div>
+				    <div class="form-group">
+				    	<label for="smear-date">Date specimen collected:</label>
+						<input type="text" name="smear-date" />
+				    </div>
+				    <div class="form-group">
+				    	<label for="smear-type">Specimen type:</label>
+				    	<ul>
+				    		<li><input type="radio" name="smear-type" value="sputum" />Sputum</li>
+				    		<li><input type="radio" name="smear-type" value="gastric-aspirate" />Gastric aspirate</li>
+				    		<li><input type="radio" name="smear-type" value="bal" />BAL</li>
+				    		<li>Other: <input type="text" name="smear-type" /></li>
+				    	</ul>
+				    </div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="">Culture:</label>
+				<div class="secondary-input">
+					<div class="form-group">
+						<input type="radio" name="culture-done" value="positive" />Positive
+				    	<input type="radio" name="culture-done" value="negative" />Negative
+				    	<input type="radio" name="culture-done" value="not-done" />Not done
+				    </div>
+				    <div class="form-group">
+				    	<label for="culture-date">Date specimen collected:</label>
+						<input type="text" name="culture-date-date" />
+				    </div>
+				    <div class="form-group">
+				    	<label for="culture-type">Specimen type:</label>
+				    	<ul>
+				    		<li><input type="radio" name="culture-type" value="sputum" />Sputum</li>
+				    		<li><input type="radio" name="culture-type" value="gastric-aspirate" />Gastric aspirate</li>
+				    		<li><input type="radio" name="culture-type" value="bal" />BAL</li>
+				    		<li>Other: <input type="text" name="culture-type" /></li>
+				    	</ul>
+				    </div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="">Other detection method (if done):</label>
+				<div class="secondary-input">
+					<div class="form-group">
+						<label for="other-detection-method">Method:</label>
+						<select name="other-detection-method">
+							<option value="GeneXpert">GeneXpert</option>
+							<option value="other NAAT">other NAAT</option>
+						</select>
+				    </div>
+				    <div class="form-group">
+				    	<input type="radio" name="other-detection-method-detected" value="detected" />Detected
+				    	<input type="radio" name="other-detection-method-detected" value="not-detected" />Not detected
+				    	<input type="radio" name="other-detection-method-detected" value="indeterminate" />Indeterminate
+				    </div>
+				    <div class="form-group">
+				    	<label for="culture-date">Date specimen collected:</label>
+						<input type="text" name="culture-date-date" />
+				    </div>
+				    <div class="form-group">
+				    	<label for="other-detection-method-type">Specimen type:</label>
+				    	<ul>
+				    		<li><input type="radio" name="other-detection-method-type" value="sputum" />Sputum</li>
+				    		<li><input type="radio" name="other-detection-method-type" value="gastric-aspirate" />Gastric aspirate</li>
+				    		<li><input type="radio" name="other-detection-method-type" value="bal" />BAL</li>
+				    		<li>Other: <input type="text" name="other-detection-method-type" /></li>
+				    	</ul>
+				    </div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="">Conventional DST:</label>
+				<div class="secondary-input">
+					<div class="form-group">
+				    	<label for="conventional-dst-date">Date specimen collected:</label>
+						<input type="text" name="conventional-dst-date" />
+				    </div>
+					<table>
+						<tr>
+							<th>Drug</th>
+							<th>Resistant</th>
+							<th>Susceptible</th>
+							<th>Unknown</th>
+						</tr>
+						<tr>
+							<td>
+								<label for="conventional-dst-isoniazid">Isoniazid</label>
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-isoniazid" value="resistant" />
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-isoniazid" value="susceptible" />
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-isoniazid" value="unknown" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="conventional-dst-rifampin">Rifampin</label>
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-rifampin" value="resistant" />
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-rifampin" value="susceptible" />
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-rifampin" value="unknown" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="conventional-dst-pyrazinamide">Pyrazinamide</label>
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-pyrazinamide" value="resistant" />
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-pyrazinamide" value="susceptible" />
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-pyrazinamide" value="unknown" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="conventional-dst-ethambutol">Ethambutol</label>
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-ethambutol" value="resistant" />
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-ethambutol" value="susceptible" />
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-ethambutol" value="unknown" />
+							</td>
+						</tr>
+						<!-- BLANK ROW -->
+						<tr class="blank-row"></tr>
+						<tr>
+							<td>
+								<label for="conventional-dst-streptomycin">Streptomycin</label>
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-streptomycin" value="resistant" />
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-streptomycin" value="susceptible" />
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-streptomycin" value="unknown" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="conventional-dst-amikacin">Amikacin</label>
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-amikacin" value="resistant" />
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-amikacin" value="susceptible" />
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-amikacin" value="unknown" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="conventional-dst-capreomycin">Capreomycin</label>
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-capreomycin" value="resistant" />
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-capreomycin" value="susceptible" />
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-capreomycin" value="unknown" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="conventional-dst-kanamycin">Kanamycin</label>
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-kanamycin" value="resistant" />
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-kanamycin" value="susceptible" />
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-kanamycin" value="unknown" />
+							</td>
+						</tr>
+						<!-- BLANK ROW -->
+						<tr class="blank-row"></tr>
+						<tr>
+							<td>
+								<label for="conventional-dst-ciprofloxacin">Ciprofloxacin</label>
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-ciprofloxacin" value="resistant" />
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-ciprofloxacin" value="susceptible" />
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-ciprofloxacin" value="unknown" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="conventional-dst-levofloxacin">Levofloxacin</label>
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-levofloxacin" value="resistant" />
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-levofloxacin" value="susceptible" />
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-levofloxacin" value="unknown" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="conventional-dst-moxifloxacin">Moxifloxacin</label>
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-moxifloxacin" value="resistant" />
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-moxifloxacin" value="susceptible" />
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-moxifloxacin" value="unknown" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="conventional-dst-ofloxacin">Ofloxacin</label>
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-ofloxacin" value="resistant" />
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-ofloxacin" value="susceptible" />
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-ofloxacin" value="unknown" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="conventional-dst-ethionamide">Ethionamide</label>
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-ethionamide" value="resistant" />
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-ethionamide" value="susceptible" />
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-ethionamide" value="unknown" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="conventional-dst-cycloserine">Cycloserine</label>
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-cycloserine" value="resistant" />
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-cycloserine" value="susceptible" />
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-cycloserine" value="unknown" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="conventional-dst-pas">PAS</label>
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-pas" value="resistant" />
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-pas" value="susceptible" />
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-pas" value="unknown" />
+							</td>
+						</tr>
+						<!-- BLANK ROW -->
+						<tr class="blank-row"></tr>
+						<tr>
+							<td>
+								<label for="conventional-dst-pas">Other:</label>
+								<input type="text" name="conventional-dst-other-1" />
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-pas" value="resistant" />
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-pas" value="susceptible" />
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-pas" value="unknown" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="conventional-dst-pas">Other:</label>
+								<input type="text" name="conventional-dst-other-2" />
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-pas" value="resistant" />
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-pas" value="susceptible" />
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-pas" value="unknown" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="conventional-dst-pas">Other:</label>
+								<input type="text" name="conventional-dst-other-3" />
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-pas" value="resistant" />
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-pas" value="susceptible" />
+							</td>
+							<td>
+								<input type="radio" name="conventional-dst-pas" value="unknown" />
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,134 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+	</head>
+	<body>
+		<h1>9: Treatment Response and Outcome</h1>
+		<form>
+			<div class="form-group">
+				<label for="report-date">Date of report:</label>
+				<input type="text" name="report-date" />
+			</div>
+
+			<table>
+				<tr>
+					<th>Response <span class="label-italic">(check all that apply)</span></th>
+					<th>Definition</th>
+				</tr>
+				<tr>
+					<td>
+						<div class="form-group">
+							<input type="checkbox" name="response-clinical-improvement" value="true" />
+							<label for="response-clinical-improvement">Clinical improvement</label>
+						</div>
+					</td>
+					<td>Resolution of all acute and chronic clinical manifestations of TB disease</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="form-group">
+							<input type="checkbox" name="response-radiological-improvement" value="true" />
+							<label for="response-radiological-improvement">Radiological improvement</label>
+						</div>
+					</td>
+					<td>Improvement of imaging abnormalities of lymph nodes, lung parenchyma, and pleural space compared to baseline</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="form-group">
+							<input type="checkbox" name="response-microbiological-improvement" value="true" />
+							<label for="response-microbiological-improvement">Microbiological improvement</label>
+						</div>
+					</td>
+					<td>3 consecutive negative cultures of respiratory specimens with &ge;1 in the last 12 months of treatment, and no positive cultures after culture conversion</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="form-group">
+							<input type="checkbox" name="response-treatment-failure" value="true" />
+							<label for="response-treatment-failure">Treatment failure</label>
+						</div>
+					</td>
+					<td>Ongoing sputum culture positivity or does not meet criteria for both clinical and radiological improvement after &ge;6 months of receiving an appropriate regimen with &gt;80% adherence and in the absence of IRIS</td>
+				</tr>
+			</table>
+
+			<table>
+				<tr>
+					<th>Outcome / treatment status</th>
+					<th>Definition</th>
+				</tr>
+				<tr>
+					<td>
+						<div class="form-group">
+							<input type="checkbox" name="outcome-treatment-status-treatment-continuing" value="true" />
+							<label for="outcome-treatment-status-treatment-continuing">Treatment continuing</label>
+						</div>
+					</td>
+					<td>Patient still receiving treatment</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="form-group">
+							<input type="checkbox" name="outcome-treatment-status-treatment-completed" value="true" />
+							<label for="outcome-treatment-status-treatment-completed">Treatment completed</label>
+						</div>
+					</td>
+					<td>Prescribed treatment completed</td>
+					<td>
+						<div class="form-group">
+							<label for="outcome-treatment-status-treatment-completed-date">Date:</label>
+							<input type="text" name="outcome-treatment-status-treatment-completed-date" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="form-group">
+							<input type="checkbox" name="outcome-treatment-status-treatment-interrupted" value="true" />
+							<label for="outcome-treatment-status-treatment-interrupted">Treatment interrupted</label>
+						</div>
+					</td>
+					<td>Treatment interrupted for &ge;2 months</td>
+					<td>
+						<div class="form-group">
+							<label for="outcome-treatment-status-treatment-interrupted-date">Date:</label>
+							<input type="text" name="outcome-treatment-status-treatment-interrupted-date" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="form-group">
+							<input type="checkbox" name="outcome-treatment-status-died" value="true" />
+							<label for="outcome-treatment-status-died">Died</label>
+						</div>
+					</td>
+					<td>
+						Patient died while on treatment
+						<div class="secondary-input">
+							<label for="">If patient died, death attributable to TB:</label>
+							<div class="secondary-input">
+								<div class="form-group">
+									<input type="radio" name="death-attributable-to-tb" value="yes" />Yes
+								</div>
+								<div class="form-group">
+									<input type="radio" name="death-attributable-to-tb" value="no" />No
+								</div>
+								<div class="form-group">
+									<input type="radio" name="death-attributable-to-tb" value="unknown" />Unknown
+								</div>
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="form-group">
+							<label for="outcome-treatment-status-died-date">Date:</label>
+							<input type="text" name="outcome-treatment-status-died-date" />
+						</div>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>

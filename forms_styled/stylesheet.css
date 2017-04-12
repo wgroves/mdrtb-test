@@ -1,0 +1,23 @@
+.secondary-input {
+    margin-left: 30px;
+}
+
+tr.blank-row {
+    height: 20px;
+}
+
+.label-italic {
+    font-style: italic;
+}
+
+td {
+	vertical-align: top;
+}
+
+table, th, td {
+	border: 1px solid black;
+}
+
+table {
+	border-collapse: collapse;
+}

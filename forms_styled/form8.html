@@ -1,0 +1,203 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+	</head>
+	<body>
+		<h1>8: Adverse Reaction</h1>
+		<div class="label-italic">Check reason(s) for regimen change</div>
+		<form>
+			<table>
+				<tr>
+					<th>System</th>
+					<th>Reaction</th>
+				</tr>
+				<tr>
+					<td>Constitutional</td>
+					<td>
+						<div class="form-group">
+							<input type="checkbox" name="constitional-anorexia" value="true"/>
+							<label for="constitional-anorexia">Anorexia (decreased oral intake)</label>
+						</div>
+						<div class="form-group">
+							<input type="checkbox" name="constitional-malaise-or-flu-symptoms" value="true"/>
+							<label for="constitional-malaise-or-flu-symptoms">Malaise or flu-like symptoms</label>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>Eyes</td>
+					<td>
+						<div class="form-group">
+							<input type="checkbox" name="eyes-visual-impairment" value="true"/>
+							<label for="eyes-visual-impairment">Visual impairment</label>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>Ear, nose, mouth, throat</td>
+					<td>
+						<div class="form-group">
+							<input type="checkbox" name="ear-nose-mouth-throat-hearing-loss" value="true"/>
+							<label for="ear-nose-mouth-throat-hearing-loss">Hearing loss</label>
+						</div>
+
+						<div class="secondary-input">
+							<label for="" class="label-italic">Indicate extent and degree:</label>
+
+							<div class="form-group">
+								<div class="form-group">
+									<input type="radio" name="ear-nose-mouth-throat-hearing-loss-extent" value="unilateral" />Unilateral
+								</div>
+
+								<div class="form-group">
+									<input type="radio" name="ear-nose-mouth-throat-hearing-loss-extent" value="bilateral" />Bilateral
+								</div>
+							</div>
+
+							<hr />
+
+							<div class="form-group">
+								<div class="form-group">
+									<input type="radio" name="ear-nose-mouth-throat-hearing-loss-degree" value="mild" />Mild
+								</div>
+
+								<div class="form-group">
+									<input type="radio" name="ear-nose-mouth-throat-hearing-loss-degree" value="moderate" />Moderate
+								</div>
+
+								<div class="form-group">
+									<input type="radio" name="ear-nose-mouth-throat-hearing-loss-degree" value="severe" />Severe
+								</div>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>Cardiovascular</td>
+					<td>
+						<div class="form-group">
+							<input type="checkbox" name="cardiovascular-shock-symptoms" value="true"/>
+							<label for="cardiovascular-shock-symptoms">Shock symptoms</label>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>Gastrointestinal</td>
+					<td>
+						<div class="form-group">
+							<input type="checkbox" name="gastroinestinal-jaundice" value="true"/>
+							<label for="gastroinestinal-jaundice">Jaundice</label>
+						</div>
+
+						<div class="form-group">
+							<input type="checkbox" name="gastroinestinal-hepatitis" value="true"/>
+							<label for="gastroinestinal-hepatitis">Hepatitis</label>
+						</div>
+
+						<div class="form-group">
+							<input type="checkbox" name="gastroinestinal-nausea" value="true"/>
+							<label for="gastroinestinal-nausea">Nausea</label>
+						</div>
+
+						<div class="form-group">
+							<input type="checkbox" name="gastroinestinal-abdominal-pain" value="true"/>
+							<label for="gastroinestinal-abdominal-pain">Abdominal pain</label>
+						</div>						
+					</td>
+				</tr>
+				<tr>
+					<td>Genitourinary</td>
+					<td>
+						<div class="form-group">
+							<input type="checkbox" name="genitourinary-acute-renal-failure" value="true"/>
+							<label for="genitourinary-acute-renal-failure">Acute renal failure</label>
+						</div>
+
+						<div class="form-group">
+							<input type="checkbox" name="genitourinary-decreased-urine-output" value="true"/>
+							<label for="genitourinary-decreased-urine-output">Decreased urine output</label>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>Musculoskeletal</td>
+					<td>
+						<div class="form-group">
+							<input type="checkbox" name="musculoskeletal-joint-pain" value="true"/>
+							<label for="musculoskeletal-joint-pain">Joint pain</label>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>Skin</td>
+					<td>
+						<div class="form-group">
+							<input type="checkbox" name="skin-rash" value="true"/>
+							<label for="skin-rash">Skin rash</label>
+						</div>
+
+						<div class="form-group">
+							<input type="checkbox" name="skin-discoloration" value="true"/>
+							<label for="skin-discoloration">Skin discoloration</label>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>Neurological</td>
+					<td>
+						<div class="form-group">
+							<input type="checkbox" name="neurological-dizziness" value="true"/>
+							<label for="neurological-dizziness">Dizziness</label>
+						</div>
+
+						<div class="form-group">
+							<input type="checkbox" name="neurological-drowsiness" value="true"/>
+							<label for="neurological-drowsiness">Drowsiness</label>
+						</div>
+
+						<div class="form-group">
+							<input type="checkbox" name="neurological-numbness-or-tingling-in-hands-or-feet" value="true"/>
+							<label for="neurological-numbness-or-tingling-in-hands-or-feet">Numbness or tingling in hands or feet</label>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>Hematologic</td>
+					<td>
+						<div class="form-group">
+							<input type="checkbox" name="hematologic-purpura" value="true"/>
+							<label for="hematologic-purpura">Purpura</label>
+						</div>
+
+						<div class="form-group">
+							<input type="checkbox" name="hematologic-anemia" value="true"/>
+							<label for="hematologic-anemia">Anemia</label>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>Psychiatric</td>
+					<td>
+						<div class="form-group">
+							<input type="checkbox" name="psychiatric-confusion-or-altered-mental-status" value="true"/>
+							<label for="psychiatric-confusion-or-altered-mental-status">Confusion or altered mental status</label>
+						</div>
+					</td>
+				</tr>
+			</table>
+
+			<div class="form-group">
+				<input type="checkbox" name="immune-reconstitution-inflammatory-syndrome" value="true"/>
+				<label for="immune-reconstitution-inflammatory-syndrome">Immune reconstitution inflammatory syndrome (IRIS)</label>
+			</div>
+
+			<div class="form-group">
+				<input type="checkbox" name="other-reason-present" value="true"/>
+				<label for="other-reason-present">Other reason <span>(describe below)</span></label>
+				<div class="secondary-input">
+					<input type="text" name="other-reason" />
+				</div>
+			</div>
+		</form>
+	</body>
+</html>
