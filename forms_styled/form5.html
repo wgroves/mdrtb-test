@@ -1,92 +1,165 @@
 <html>
 	<head>
+		<!-- Alex's stylesheet, very basic -->
 		<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+		<!-- Ian's stylesheets -->
+		<link rel="stylesheet" type="text/css" href="home.css" />
+		<link rel="stylesheet" type="text/css" href="login.css" />
 	</head>
 	<body>
-		<h1>5: Initial Laboratory Results</h1>
-		<form>
-			<div class="form-group">
-				<label for="">Smear:</label>
-				<div class="secondary-input">
-					<div class="form-group">
-						<input type="radio" name="smear-done" value="positive" />Positive
-				    	<input type="radio" name="smear-done" value="negative" />Negative
-				    	<input type="radio" name="smear-done" value="not-done" />Not done
-				    </div>
-				    <div class="form-group">
-				    	<label for="smear-date">Date specimen collected:</label>
-						<input type="text" name="smear-date" />
-				    </div>
-				    <div class="form-group">
-				    	<label for="smear-type">Specimen type:</label>
-				    	<ul>
-				    		<li><input type="radio" name="smear-type" value="sputum" />Sputum</li>
-				    		<li><input type="radio" name="smear-type" value="gastric-aspirate" />Gastric aspirate</li>
-				    		<li><input type="radio" name="smear-type" value="bal" />BAL</li>
-				    		<li>Other: <input type="text" name="smear-type" /></li>
-				    	</ul>
-				    </div>
-				</div>
-			</div>
+		<nav id="navbar">
+		    <div id="nav-left">
+		    	<h1 id="white-text">Online Portal</h1>
+		    </div>
+		</nav>
 
-			<div class="form-group">
-				<label for="">Culture:</label>
-				<div class="secondary-input">
-					<div class="form-group">
-						<input type="radio" name="culture-done" value="positive" />Positive
-				    	<input type="radio" name="culture-done" value="negative" />Negative
-				    	<input type="radio" name="culture-done" value="not-done" />Not done
-				    </div>
-				    <div class="form-group">
-				    	<label for="culture-date">Date specimen collected:</label>
-						<input type="text" name="culture-date-date" />
-				    </div>
-				    <div class="form-group">
-				    	<label for="culture-type">Specimen type:</label>
-				    	<ul>
-				    		<li><input type="radio" name="culture-type" value="sputum" />Sputum</li>
-				    		<li><input type="radio" name="culture-type" value="gastric-aspirate" />Gastric aspirate</li>
-				    		<li><input type="radio" name="culture-type" value="bal" />BAL</li>
-				    		<li>Other: <input type="text" name="culture-type" /></li>
-				    	</ul>
-				    </div>
-				</div>
-			</div>
+		<div id="main">
+			<h1>5: Initial Laboratory Results</h1>
+			<form>
+				<div class="form-section">
+					<label>Smear</label>
 
-			<div class="form-group">
-				<label for="">Other detection method (if done):</label>
-				<div class="secondary-input">
-					<div class="form-group">
-						<label for="other-detection-method">Method:</label>
-						<select name="other-detection-method">
-							<option value="GeneXpert">GeneXpert</option>
-							<option value="other NAAT">other NAAT</option>
-						</select>
-				    </div>
-				    <div class="form-group">
-				    	<input type="radio" name="other-detection-method-detected" value="detected" />Detected
-				    	<input type="radio" name="other-detection-method-detected" value="not-detected" />Not detected
-				    	<input type="radio" name="other-detection-method-detected" value="indeterminate" />Indeterminate
-				    </div>
-				    <div class="form-group">
-				    	<label for="culture-date">Date specimen collected:</label>
-						<input type="text" name="culture-date-date" />
-				    </div>
-				    <div class="form-group">
-				    	<label for="other-detection-method-type">Specimen type:</label>
-				    	<ul>
-				    		<li><input type="radio" name="other-detection-method-type" value="sputum" />Sputum</li>
-				    		<li><input type="radio" name="other-detection-method-type" value="gastric-aspirate" />Gastric aspirate</li>
-				    		<li><input type="radio" name="other-detection-method-type" value="bal" />BAL</li>
-				    		<li>Other: <input type="text" name="other-detection-method-type" /></li>
-				    	</ul>
-				    </div>
-				</div>
-			</div>
+					<div class="secondary-input">
+						<div class="form-group">
+							<div class="form-group">
+								<input type="radio" name="smear-done" value="positive" />
+								<label>Positive</label>
+							</div>
+							<div class="form-group">
+								<input type="radio" name="smear-done" value="negative" />
+								<label>Negative</label>
+							</div>
+							<div class="form-group">
+								<input type="radio" name="smear-done" value="not-done" />
+								<label>Not done</label>
+							</div>
+						</div>
 
-			<div class="form-group">
-				<label for="">Conventional DST:</label>
-				<div class="secondary-input">
+						<div class="form-section">
+							<label for="smear-date">Date specimen collected:</label>
+							<input type="text" name="smear-date" />
+						</div>
+
+						<label for="smear-type">Specimen type:</label>
+						<div class="secondary-input">
+							<div class="form-group">
+				    			<input type="radio" name="smear-type" value="sputum" />
+				    			<label>Sputum</label>
+				    		</div>
+				    		<div class="form-group">
+				    			<input type="radio" name="smear-type" value="gastric-aspirate" />
+				    			<label>Gastric aspirate</label>
+				    		</div>
+				    		<div class="form-group">
+				    			<input type="radio" name="smear-type" value="bal" />
+				    			<label>BAL</label>
+				    		</div>
+				    		<div class="form-group">
+				    			<label>Other: </label>
+				    			<input type="text" name="smear-type" />
+				    		</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="">Culture:</label>
+					<div class="secondary-input">
+						<div class="form-group">
+							<input type="radio" name="culture-done" value="positive" />
+							<label>Positive</label>
+						</div>
+						<div class="form-group">
+							<input type="radio" name="culture-done" value="negative" />
+							<label>Negative</label>
+						</div>
+						<div class="form-group">
+							<input type="radio" name="culture-done" value="not-done" />
+							<label>Not done</label>
+						</div>
+
+					    <div class="form-section">
+					    	<label for="culture-date">Date specimen collected:</label>
+							<input type="text" name="culture-date-date" />
+					    </div>
+					    
+					    <label for="culture-type">Specimen type:</label>
+					    <div class="secondary-input">
+					    	<div class="form-group">
+					    		<input type="radio" name="culture-type" value="sputum" />
+					    		<label>Sputum</label>
+					    	</div>
+					    	<div class="form-group">
+					    		<input type="radio" name="culture-type" value="gastric-aspirate" />
+					    		<label>Gastric aspirate</label>
+					    	</div>
+					    	<div class="form-group">
+					    		<input type="radio" name="culture-type" value="bal" />
+					    		<label>BAL</label>
+					    	</div>
+					    	<div class="form-group">
+					    		<label>Other: </label>
+					    		<input type="text" name="culture-type" />
+					    	</div>
+					    </div>
+					</div>
+				</div>
+
+				<div class="form-section">
+					<label for="">Other detection method (if done):</label>
+					<div class="secondary-input">
+						<div class="form-group">
+							<label for="other-detection-method">Method:</label>
+							<select name="other-detection-method">
+								<option value="GeneXpert">GeneXpert</option>
+								<option value="other NAAT">other NAAT</option>
+							</select>
+					    </div>
+					    <div class="form-group">
+					    	<input type="radio" name="other-detection-method-detected" value="detected" />
+					    	<label>Detected</label>
+					    </div>
+					    <div class="form-group">
+					    	<input type="radio" name="other-detection-method-detected" value="not-detected" />
+					    	<label>Not detected</label>
+					    </div>
+					    <div class="form-group">
+					    	<input type="radio" name="other-detection-method-detected" value="indeterminate" />
+					    	<label>Indeterminate</label>
+					    </div>
+
+					    <div class="form-section">
+					    	<label for="culture-date">Date specimen collected:</label>
+							<input type="text" name="culture-date-date" />
+					    </div>
+					    
+						<label for="other-detection-method-type">Specimen type:</label>
+					    <div class="secondary-input">
+					    	<div class="form-group">
+					    		<input type="radio" name="other-detection-method-type" value="sputum" />
+					    		<label>Sputum</label>
+					    	</div>
+
+					    	<div class="form-group">
+					    		<input type="radio" name="other-detection-method-type" value="gastric-aspirate" />
+					    		<label>Gastric aspirate</label>
+					    	</div>
+
+					    	<div class="form-group">
+					    		<input type="radio" name="other-detection-method-type" value="bal" />
+					    		<label>BAL</label>
+					    	</div>
+
+					    	<div class="form-group">
+					    		<label>Other: </label>
+					    		<input type="text" name="other-detection-method-type" />
+					    	</div>
+					    </div>
+					</div>
+				</div>
+
+				<div class="form-section">
+					<h1><label for="">Conventional DST:</label></h1>
 					<div class="form-group">
 				    	<label for="conventional-dst-date">Date specimen collected:</label>
 						<input type="text" name="conventional-dst-date" />
@@ -361,7 +434,11 @@
 						</tr>
 					</table>
 				</div>
-			</div>
-		</form>
+
+				<div id="continue-button-wrap">
+					<input id="continue-button" class="button1" type="button" name="continue" value="Continue" />
+				</div>
+			</form>
+		</div>
 	</body>
 </html>
