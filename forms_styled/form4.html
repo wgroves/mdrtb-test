@@ -1,154 +1,219 @@
 <html>
 	<head>
+		<!-- Alex's stylesheet, very basic -->
 		<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+		<!-- Ian's stylesheets -->
+		<link rel="stylesheet" type="text/css" href="home.css" />
+		<link rel="stylesheet" type="text/css" href="login.css" />
 	</head>
 	<body>
-		<h1>4: Characteristics at DR-TB Evaluation</h1>
-		<form>
-			<div class="form-group">
-				<label for="evaluation-date">Date of diagnostic evaluation:</label>
-		    	<input type="text" name="evaluation-date" />
-			</div>
+		<nav id="navbar">
+		    <div id="nav-left">
+		    	<h1 id="white-text">Online Portal</h1>
+		    </div>
+		</nav>
 
-			<div class="form-group">
-				<label for="height">Height (cm):</label>
-		    	<input type="number" name="height" />
-			</div>
-
-			<div class="form-group">
-				<label for="weight">Weight (kg):</label>
-		    	<input type="number" name="weight" />
-			</div>
-
-			<div class="form-group">
-				<label for="previous-diagnosis-and-treatment">Previous TB diagnosis and treatment:</label>
-				<label class="label-italic">(&ge;1 month of treatment received AND &ge;6 symptom-free months before current episode)</label>
-				<div class="form-group secondary-input">
-					<input type="radio" name="previous-diagnosis-and-treatment" value="yes" />Yes
-					<div class="form-group secondary-input">
-						<label for="previous-diagnosis-and-treatment-year">If yes, year:</label>
-				    	<input type="number" name="previous-diagnosis-and-treatment-year" />
-					</div>
-	  				<input type="radio" name="previous-diagnosis-and-treatment" value="no" />No
-				</div>
-			</div>
-
-			<div class="form-group">
-				<label for="hiv-status-at-diagnosis">HIV status at diagnosis:</label>
-				<div class="form-group secondary-input">
-					<input type="radio" name="hiv-status-at-diagnosis" value="positive" />Positive
-	  				<input type="radio" name="hiv-status-at-diagnosis" value="negative" />Negative
-	  				<input type="radio" name="hiv-status-at-diagnosis" value="unknown" />Unknown
-	  				<div class="form-group secondary-input">
-						<label for="hiv-status-at-diagnosis-on-art">If positive, on ART?</label>
-				    	<input type="radio" name="hiv-status-at-diagnosis-on-art" value="yes" />Yes
-				    	<input type="radio" name="hiv-status-at-diagnosis-on-art" value="no" />No
+		<div id="main">
+			<h1>4: Characteristics at DR-TB Evaluation</h1>
+			<form>
+				<div class="form-section">
+					<div class="form-group">
+						<label for="evaluation-date">Date of diagnostic evaluation:</label>
+				    	<input type="text" name="evaluation-date" />
 					</div>
 				</div>
-			</div>
 
-			<div class="form-group">
-				<label for="signs-of-malnutrition-at-diagnosis">Signs of malnutrition present at diagnosis:</label>
-				<input type="radio" name="signs-of-malnutrition-at-diagnosis" value="yes" />Yes
-  				<input type="radio" name="signs-of-malnutrition-at-diagnosis" value="no" />No
-  				<input type="radio" name="signs-of-malnutrition-at-diagnosis" value="unknown" />Unknown
-			</div>
-
-			<div class="form-group">
-				<label for="other-chronic-conditions-at-diagnosis">Other chronic conditions present at diagnosis:</label>
-				<div class="form-group secondary-input">
-					<input type="radio" name="other-chronic-conditions-at-diagnosis" value="yes" />Yes
-	  				<input type="radio" name="other-chronic-conditions-at-diagnosis" value="no" />No
-	  				<input type="radio" name="other-chronic-conditions-at-diagnosis" value="unknown" />Unknown
-	  				<div class="form-group secondary-input">
-						<label for="other-chronic-conditions-at-diagnosis-specify">If yes, specify:</label>
-				    	<input type="text" name="other-chronic-conditions-at-diagnosis-specify" />
+				<div class="form-section">
+					<div class="form-group">
+						<label for="height">Height (cm):</label>
+				    	<input type="number" name="height" />
 					</div>
-				</div>
-			</div>
-
-			<label for="">Site of disease <span class="label-italic">(check all that apply):</span></label>
-			<div class="secondary-input">
-				<div class="form-group">
-					<input type="checkbox" name="site-of-disease-pulmonary" />
-		    		<label for="site-of-disease-pulmonary">Pulmonary</label>
-				</div>
-
-				<div class="form-group">
-					<input type="checkbox" name="site-of-disease-pleural" />
-		    		<label for="site-of-disease-pleural">Pleural</label>
-				</div>
-
-				<div class="form-group">
-					<input type="checkbox" name="site-of-disease-laryngeal" />
-		    		<label for="site-of-disease-laryngeal">Laryngeal</label>
-				</div>
-
-				<div class="form-group">
-					<input type="checkbox" name="site-of-disease-meningeal" />
-		    		<label for="site-of-disease-meningeal">Meningeal</label>
-				</div>
-
-				<div class="form-group">
-					<input type="checkbox" name="site-of-disease-lymphatic-inthrathoracic" />
-		    		<label for="site-of-disease-lymphatic-inthrathoracic">Lymphatic: Inthrathoracic</label>
-				</div>
-
-				<div class="form-group">
-					<input type="checkbox" name="site-of-disease-lymphatic-cervical" />
-		    		<label for="site-of-disease-lymphatic-cervical">Lymphatic: Cervical</label>
-				</div>
-
-				<div class="form-group">
-					<input type="checkbox" name="site-of-disease-lymphatic-axillary" />
-		    		<label for="site-of-disease-lymphatic-axillary">Lymphatic: Axillary</label>
-				</div>
-
-				<div class="form-group">
-					<input type="checkbox" name="site-of-disease-bone-joint" />
-		    		<label for="site-of-disease-bone-joint">Bone and/or Joint</label>
-				</div>
-
-				<div class="form-group">
-					<input type="checkbox" name="site-of-disease-genitourinary" />
-		    		<label for="site-of-disease-genitourinary">Genitourinary</label>
-				</div>
-
-				<div class="form-group">
-					<input type="checkbox" name="site-of-disease-peritoneal" />
-		    		<label for="site-of-disease-peritoneal">Peritoneal</label>
-				</div>
-
-				<div class="form-group">
-					<input type="checkbox" name="site-of-disease-other-1" />
-		    		<label for="site-of-disease-other-1">Other Site 1</label>
-				</div>
-
-				<div class="form-group">
-					<input type="checkbox" name="site-of-disease-other-2" />
-		    		<label for="site-of-disease-other-2">Other Site 2</label>
-				</div>
-			</div>
-
-			<div class="form-group">
-				<label for="">Initial chest radiograph:</label>
-				<div class="secondary-input">
-					<label for="chest-radiograph-date">Date of chest radiograph:</label>
-					<input type="text" name="chest-radiograph-date" />
 
 					<div class="form-group">
-						<label for="chest-radiograph-info">Signs of malnutrition present at diagnosis:</label>
-						<input type="radio" name="chest-radiograph-info" value="abnormal-consistent-with-tb" />Abnormal and consistent with TB
-						<input type="radio" name="chest-radiograph-info" value="abnormal-not-consistent-with-tb" />Abnormal and NOT consistent with TB
-						<input type="radio" name="chest-radiograph-info" value="normal" />Normal
-						<input type="radio" name="chest-radiograph-info" value="not-done" />Not done
-						<input type="radio" name="chest-radiograph-info" value="done-result-unknown" />Done but result unknown
+						<label for="weight">Weight (kg):</label>
+				    	<input type="number" name="weight" />
 					</div>
 				</div>
-			</div>
 
-			<div class="form-group">
-				<label for="">If <span class="label-italic">abnormal and consistent with TB</span>, indicate whether radiographic features in table below were present.</label>
+				<div class="form-section">
+					<label for="previous-diagnosis-and-treatment">Previous TB diagnosis and treatment:</label>
+
+					<div><label class="label-italic">(&ge; 1 month of treatment received AND &ge; 6 symptom-free months before current episode)</label></div>
+
+					<div class="secondary-input">
+						<div>
+							<input type="radio" name="previous-diagnosis-and-treatment" value="yes" />
+							<label>Yes</label>
+
+							<span style="margin-left: 40px;">
+								<label for="previous-diagnosis-and-treatment-year">If yes, year:</label>
+						    	<input type="number" name="previous-diagnosis-and-treatment-year" />
+						    </span>
+						</div>
+
+		  				<div>
+		  					<input type="radio" name="previous-diagnosis-and-treatment" value="no" />
+		  					<label>No</label>
+		  				</div>
+					</div>
+				</div>
+
+				<div class="form-section">
+					<label for="hiv-status-at-diagnosis">HIV status at diagnosis:</label>
+					<div class="secondary-input">
+						<div class="form-group">
+							<input type="radio" name="hiv-status-at-diagnosis" value="positive" />
+							<label>Positive</label>
+
+							<span style="margin-left: 40px;">
+								<label for="hiv-status-at-diagnosis-on-art">If positive, on ART?</label>
+						    	<input type="radio" name="hiv-status-at-diagnosis-on-art" value="yes" /><label>Yes</label>
+						    	<input type="radio" name="hiv-status-at-diagnosis-on-art" value="no" /><label>No</label>
+							</span>
+						</div>
+
+						<div class="form-group">
+							<input type="radio" name="hiv-status-at-diagnosis" value="negative" />
+							<label>Negative</label>
+						</div>
+
+						<div class="form-group">
+							<input type="radio" name="hiv-status-at-diagnosis" value="unknown" />
+							<label>Unknown</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-section">
+					<label for="signs-of-malnutrition-at-diagnosis">Signs of malnutrition present at diagnosis:</label>
+					<input type="radio" name="signs-of-malnutrition-at-diagnosis" value="yes" /><label>Yes</label>
+	  				<input type="radio" name="signs-of-malnutrition-at-diagnosis" value="no" /><label>No</label>
+	  				<input type="radio" name="signs-of-malnutrition-at-diagnosis" value="unknown" /><label>Unknown</label>
+				</div>
+
+				<div class="form-section">
+					<label for="other-chronic-conditions-at-diagnosis">Other chronic conditions present at diagnosis:</label>
+					<div class="secondary-input">
+						<div class="form-group">
+							<input type="radio" name="other-chronic-conditions-at-diagnosis" value="yes" />
+							<label>Yes</label>
+							<span style="margin-left: 40px;">
+								<label for="other-chronic-conditions-at-diagnosis-specify">If yes, specify:</label>
+						    	<input type="text" name="other-chronic-conditions-at-diagnosis-specify" />
+							</span>
+						</div>
+						<div class="form-group">
+							<input type="radio" name="other-chronic-conditions-at-diagnosis" value="no" />
+							<label>No</label>
+						</div>
+						<div class="form-group">
+							<input type="radio" name="other-chronic-conditions-at-diagnosis" value="unknown" />
+							<label>Unknown</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-section">
+					<label for="">Site of disease <span class="label-italic">(check all that apply):</span></label>
+					<div class="secondary-input">
+						<div class="form-group">
+							<input type="checkbox" name="site-of-disease-pulmonary" />
+				    		<label for="site-of-disease-pulmonary">Pulmonary</label>
+						</div>
+
+						<div class="form-group">
+							<input type="checkbox" name="site-of-disease-pleural" />
+				    		<label for="site-of-disease-pleural">Pleural</label>
+						</div>
+
+						<div class="form-group">
+							<input type="checkbox" name="site-of-disease-laryngeal" />
+				    		<label for="site-of-disease-laryngeal">Laryngeal</label>
+						</div>
+
+						<div class="form-group">
+							<input type="checkbox" name="site-of-disease-meningeal" />
+				    		<label for="site-of-disease-meningeal">Meningeal</label>
+						</div>
+
+						<div class="form-group">
+							<input type="checkbox" name="site-of-disease-lymphatic-inthrathoracic" />
+				    		<label for="site-of-disease-lymphatic-inthrathoracic">Lymphatic: Inthrathoracic</label>
+						</div>
+
+						<div class="form-group">
+							<input type="checkbox" name="site-of-disease-lymphatic-cervical" />
+				    		<label for="site-of-disease-lymphatic-cervical">Lymphatic: Cervical</label>
+						</div>
+
+						<div class="form-group">
+							<input type="checkbox" name="site-of-disease-lymphatic-axillary" />
+				    		<label for="site-of-disease-lymphatic-axillary">Lymphatic: Axillary</label>
+						</div>
+
+						<div class="form-group">
+							<input type="checkbox" name="site-of-disease-bone-joint" />
+				    		<label for="site-of-disease-bone-joint">Bone and/or Joint</label>
+						</div>
+
+						<div class="form-group">
+							<input type="checkbox" name="site-of-disease-genitourinary" />
+				    		<label for="site-of-disease-genitourinary">Genitourinary</label>
+						</div>
+
+						<div class="form-group">
+							<input type="checkbox" name="site-of-disease-peritoneal" />
+				    		<label for="site-of-disease-peritoneal">Peritoneal</label>
+						</div>
+
+						<div class="form-group">
+							<input type="checkbox" name="site-of-disease-other-1" />
+				    		<label for="site-of-disease-other-1">Other Site 1</label>
+						</div>
+
+						<div class="form-group">
+							<input type="checkbox" name="site-of-disease-other-2" />
+				    		<label for="site-of-disease-other-2">Other Site 2</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-section">
+					<label for="">Initial chest radiograph:</label>
+					<div class="secondary-input">
+						<div class="form-group">
+							<label for="chest-radiograph-date">Date of chest radiograph:</label>
+							<input type="text" name="chest-radiograph-date" />
+						</div>
+
+						<label for="chest-radiograph-info">Signs of malnutrition present at diagnosis:</label>
+						<div class="secondary-input">
+							<div class="form-group">
+								<input type="radio" name="chest-radiograph-info" value="abnormal-consistent-with-tb" />
+								<label>Abnormal and consistent with TB</label>
+							</div>
+							<div class="form-group">
+								<input type="radio" name="chest-radiograph-info" value="abnormal-not-consistent-with-tb" />
+								<label>Abnormal and NOT consistent with TB</label>
+							</div>
+							<div class="form-group">
+								<input type="radio" name="chest-radiograph-info" value="normal" />
+								<label>Normal</label>
+							</div>
+							<div class="form-group">
+								<input type="radio" name="chest-radiograph-info" value="not-done" />
+								<label>Not done</label>
+							</div>
+							<div class="form-group">
+								<input type="radio" name="chest-radiograph-info" value="done-result-unknown" />
+								<label>Done but result unknown</label>
+							</div>
+						</div>
+					</div>
+
+					<label for="">If <span class="label-italic">abnormal and consistent with TB</span>, indicate whether radiographic features in table below were present.</label>
+				</div>
+
 				<table>
 					<tr>
 						<th>Principal disease entity</th>
@@ -309,7 +374,11 @@
 						</td>
 					</tr>
 				</table>
-			</div>
-		</form>
+
+				<div id="continue-button-wrap">
+					<input id="continue-button" class="button1" type="button" name="continue" value="Continue" />
+				</div>
+			</form>
+		</div>
 	</body>
 </html>
