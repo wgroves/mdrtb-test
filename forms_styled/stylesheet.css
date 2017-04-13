@@ -3,12 +3,11 @@ html, body {
 }
 
 #main {
-	padding: 0px 40px 0px;
+	padding: 0px 40px 75px 40px;
 }
 
 /* goes around most every input and its corresponding label */
 .form-group {
-	/*border: 1px solid rgba(0,0,0,0.5);*/
 	margin: 10px 0px;
 }
 
