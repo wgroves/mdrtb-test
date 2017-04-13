@@ -17,10 +17,14 @@ html, body {
 	margin: 20px 0px;
 }
 
+#continue-button-wrap {
+	width: 100%;
+	position: relative;
+}
+
 #continue-button {
 	width: 120px;
-	float: right;
-	position: relative;
+	position: absolute;
 	right: 30px;
 }
 
