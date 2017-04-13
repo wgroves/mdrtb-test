@@ -1,5 +1,47 @@
+html, body {
+	height: 100%;
+}
+
+#main {
+	padding: 0px 40px 0px;
+}
+
+/* goes around most every input and its corresponding label */
+.form-group {
+	/*border: 1px solid rgba(0,0,0,0.5);*/
+	margin: 10px 0px;
+}
+
+/* goes around inputs that should be closer together */
+.form-section {
+	margin: 20px 0px;
+}
+
+#continue-button {
+	width: 120px;
+	float: right;
+	position: relative;
+	right: 30px;
+}
+
+label {
+	font-size: 13pt;
+	font-family: 
+}
+
+input[type="text"] {
+	height: 25px;
+}
+
+input[type="radio"], input[type="checkbox"] {
+	margin-right: 5px;
+}
+
+/**********************
+	***********************/
+
 .secondary-input {
-    margin-left: 30px;
+    margin: 10px 0px 10px 30px;
 }
 
 tr.blank-row {

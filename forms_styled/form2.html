@@ -1,61 +1,83 @@
 <html>
 	<head>
+		<!-- Alex's stylesheet, very basic -->
 		<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+		<!-- Ian's stylesheets -->
+		<link rel="stylesheet" type="text/css" href="home.css" />
+		<link rel="stylesheet" type="text/css" href="login.css" />
 	</head>
 	<body>
-		<h1>2: Checklist for Drug-Resistant TB</h1>
-		<form>
-  			<div class="form-group">
-		    	<input type="checkbox" name="drug-resistance-indicated" />
-		    	<label for="drug-resistance-indicated">Drug susceptibility test indicates drug resistance</label>
-			</div>
+		<nav id="navbar">
+		    <div id="nav-left">
+		    	<h1 id="white-text">Online Portal</h1>
+		    </div>
+		</nav>
 
-			<div class="form-group">
-		    	<input type="checkbox" name="first-line-treatment-failure" />
-		    	<label for="first-line-treatment-failure">Treatment failure with first-line drugs</label>
-			</div>
+		<div id="main">
+			<h1>2: Checklist for Drug-Resistant TB</h1>
+			<form>
+	  			<div class="form-section">
+	  				<div class="form-group">
+				    	<input type="checkbox" name="drug-resistance-indicated" />
+				    	<label for="drug-resistance-indicated">Drug susceptibility test indicates drug resistance</label>
+					</div>
+	  			</div>
 
-			<div class="form-group">
-		    	<input type="checkbox" name="contact-with-drug-resistant" />
-		    	<label for="contact-with-drug-resistant">Contact with known drug-resistant case</label>
-			</div>
+	  			<div class="form-section">
+	  				<div class="form-group">
+				    	<input type="checkbox" name="first-line-treatment-failure" />
+				    	<label for="first-line-treatment-failure">Treatment failure with first-line drugs</label>
+					</div>
+	  			</div>
 
-			<div class="form-group">
-		    	<input type="checkbox" name="any-resistance-factors" />
-		    	<label for="any-resistance-factors"><u>Source case</u> had any of the following risk factors for drug resistance</label>
-			</div>
+	  			<div class="form-section">
+	  				<div class="form-group">
+				    	<input type="checkbox" name="contact-with-drug-resistant" />
+				    	<label for="contact-with-drug-resistant">Contact with known drug-resistant case</label>
+					</div>
+	  			</div>
 
-			<div class="secondary-input">
-				<div class="form-group">
-			    	<input type="checkbox" name="resistance-factor-treatment-failure" />
-			    	<label for="resistance-factor-treatment-failure">Treatment failure</label>
-				</div>
+	  			<div class="form-section">
+	  				<div class="form-group">
+				    	<input type="checkbox" name="any-resistance-factors" />
+				    	<label for="any-resistance-factors"><u>Source case</u> had any of the following risk factors for drug resistance</label>
+					</div>
 
-				<div class="form-group">
-			    	<input type="checkbox" name="resistance-factor-died" />
-			    	<label for="resistance-factor-died">Died during TB treatment</label>
-				</div>
+					<div class="secondary-input">
+						<div class="form-group">
+					    	<input type="checkbox" name="resistance-factor-treatment-failure" />
+					    	<label for="resistance-factor-treatment-failure">Treatment failure</label>
+						</div>
 
-				<div class="form-group">
-			    	<input type="checkbox" name="resistance-factor-default-or-non-adherence" />
-			    	<label for="resistance-factor-default-or-non-adherence">Treatment default or non-adherence</label>
-				</div>
+						<div class="form-group">
+					    	<input type="checkbox" name="resistance-factor-died" />
+					    	<label for="resistance-factor-died">Died during TB treatment</label>
+						</div>
 
-				<div class="form-group">
-			    	<input type="checkbox" name="resistance-factor-previous-treatment" />
-			    	<label for="resistance-factor-previous-treatment">Previous TB treatment</label>
-				</div>
+						<div class="form-group">
+					    	<input type="checkbox" name="resistance-factor-default-or-non-adherence" />
+					    	<label for="resistance-factor-default-or-non-adherence">Treatment default or non-adherence</label>
+						</div>
 
-				<div class="form-group">
-			    	<input type="checkbox" name="resistance-factor-exposure-to-drug-resistant" />
-			    	<label for="resistance-factor-exposure-to-drug-resistant">Exposure to a known drug-resistant case</label>
-				</div>
+						<div class="form-group">
+					    	<input type="checkbox" name="resistance-factor-previous-treatment" />
+					    	<label for="resistance-factor-previous-treatment">Previous TB treatment</label>
+						</div>
 
-				<div class="form-group">
-			    	<input type="checkbox" name="resistance-factor-travel-to-resistant-prevalent-area" />
-			    	<label for="resistance-factor-travel-to-resistant-prevalent-area">Travel to an area with high prevalence of drug-resistant TB</label>
-				</div>
-			</div>
-		</form>
+						<div class="form-group">
+					    	<input type="checkbox" name="resistance-factor-exposure-to-drug-resistant" />
+					    	<label for="resistance-factor-exposure-to-drug-resistant">Exposure to a known drug-resistant case</label>
+						</div>
+
+						<div class="form-group">
+					    	<input type="checkbox" name="resistance-factor-travel-to-resistant-prevalent-area" />
+					    	<label for="resistance-factor-travel-to-resistant-prevalent-area">Travel to an area with high prevalence of drug-resistant TB</label>
+						</div>
+					</div>
+	  			</div>
+
+	  			<input id="continue-button" class="button1" type="button" name="continue" value="Continue" />
+			</form>
+		</div>
 	</body>
 </html>
