@@ -1,157 +1,186 @@
 <html>
 	<head>
+		<!-- Alex's stylesheet, very basic -->
 		<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+		<!-- Ian's stylesheets -->
+		<link rel="stylesheet" type="text/css" href="home.css" />
+		<link rel="stylesheet" type="text/css" href="login.css" />
 	</head>
 	<body>
-		<h1>6: New Regimen</h1>
-		<form>
-			<div class="form-group">
-				<label for="new-regimen-date-started">Date started:</label>
-				<input type="text" name="new-regimen-date-started" />
-			</div>
+		<nav id="navbar">
+		    <div id="nav-left">
+		    	<h1 id="white-text">Online Portal</h1>
+		    </div>
+		</nav>
 
-			<div class="form-group">
-				<label for="height">Height (cm):</label>
-		    	<input type="number" name="height" />
-			</div>
+		<div id="main">
+			<h1>6: New Regimen</h1>
+			<form>
+				<div class="form-section">
+					<div class="form-group">
+						<label for="new-regimen-date-started">Date started:</label>
+						<input type="text" name="new-regimen-date-started" />
+					</div>
+				</div>
 
-			<div class="form-group">
-				<label for="weight">Weight (kg):</label>
-		    	<input type="number" name="weight" />
-			</div>
+				<div class="form-section">
+					<div class="form-group">
+						<label for="height">Height (cm):</label>
+				    	<input type="number" name="height" />
+					</div>
 
-			<div class="form-group">
-				<label for="regimen-change-reason">Reason for regimen change <span class="label-italic">(check all that apply)</span>:</label>
-				<ul>
-					<li>
-						<input type="radio" name="regimen-change-reason" value="adjusting-dose-for-weight" />Adjusting dose for weight
-					</li>
-					<li>
-						<input type="radio" name="regimen-change-reason" value="new-drug-susceptibility-test-results" />New drug susceptibility test results
-					</li>
-					<li>
-						<input type="radio" name="regimen-change-reason" value="adverse-reaction-to-drug" />Adverse reaction to drug
-					</li>
-					<li>
-						Other:
-						<input type="input" name="regimen-change-reason" />
-					</li>
-				</ul>
-			</div>
+					<div class="form-group">
+						<label for="weight">Weight (kg):</label>
+				    	<input type="number" name="weight" />
+					</div>
+				</div>
 
-			<div class="form-group">
-				<table class="secondary-input">
-					<tr>
-						<td></td>
-						<th>Drug</th>
-						<th>Dose</th>
-						<th>Route</th>
-						<th>Frequency</th>
-					</tr>
+				<div class="form-section">
+					<label for="regimen-change-reason">Reason for regimen change <span class="label-italic">(check all that apply)</span>:</label>
+					<div class="secondary-input">
+						<div class="form-group">
+							<input type="radio" name="regimen-change-reason" value="adjusting-dose-for-weight" /><label>Adjusting dose for weight</label>
+						</div>
+						<div class="form-group">
+							<input type="radio" name="regimen-change-reason" value="new-drug-susceptibility-test-results" /><label>New drug susceptibility test results</label>
+						</div>
+						<div class="form-group">
+							<input type="radio" name="regimen-change-reason" value="adverse-reaction-to-drug" /><label>Adverse reaction to drug</label>
+						</div>
+						<div class="form-group">
+							<label>Other:</label>
+							<input type="input" name="regimen-change-reason" />
+						</div>
+					</div>
+				</div>
 
-					<tr>
-						<td>
-							1.
-						</td>
-						<td>
-							[TODO show Drug 1 information from last regimen]
-						</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td>
-							<input type="button" value="Edit" name="drug-1-edit" />
-						</td>
-						<td>
-							<input type="button" value="Stop" name="drug-1-stop" />
-						</td>
-					</tr>
+				<div class="form-group">
+					<table>
+						<tr>
+							<td></td>
+							<th>Drug</th>
+							<th>Dose</th>
+							<th>Route</th>
+							<th>Frequency</th>
+						</tr>
 
-					<tr>
-						<td>
-							2.
-						</td>
-						<td>
-							[TODO show Drug 2 information from last regimen]
-						</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td>
-							<input type="button" value="Edit" name="drug-2-edit" />
-						</td>
-						<td>
-							<input type="button" value="Stop" name="drug-2-stop" />
-						</td>
-					</tr>
+						<tr>
+							<td>
+								<label>1.</label>
+							</td>
+							<td>
+								<label>[TODO show Drug 1 information from last regimen]</label>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>
+								<input type="button" value="Edit" name="drug-1-edit" />
+							</td>
+							<td>
+								<input type="button" value="Stop" name="drug-1-stop" />
+							</td>
+						</tr>
 
-					<tr>
-						<td>
-							3.
-						</td>
-						<td>
-							[TODO show Drug 3 information from last regimen]
-						</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td>
-							<input type="button" value="Edit" name="drug-3-edit" />
-						</td>
-						<td>
-							<input type="button" value="Stop" name="drug-3-stop" />
-						</td>
-					</tr>
+						<tr>
+							<td>
+								<label>2.</label>
+							</td>
+							<td>
+								<label>[TODO show Drug 2 information from last regimen]</label>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>
+								<input type="button" value="Edit" name="drug-2-edit" />
+							</td>
+							<td>
+								<input type="button" value="Stop" name="drug-2-stop" />
+							</td>
+						</tr>
 
-					<tr>
-						<td>
-							4.
-						</td>
-						<td>
-							[TODO show Drug 4 information from last regimen]
-						</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td>
-							<input type="button" value="Edit" name="drug-4-edit" />
-						</td>
-						<td>
-							<input type="button" value="Stop" name="drug-4-stop" />
-						</td>
-					</tr>
+						<tr>
+							<td>
+								<label>3.</label>
+							</td>
+							<td>
+								<label>[TODO show Drug 3 information from last regimen]</label>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>
+								<input type="button" value="Edit" name="drug-3-edit" />
+							</td>
+							<td>
+								<input type="button" value="Stop" name="drug-3-stop" />
+							</td>
+						</tr>
 
-					<tr>
-						<td>
-							5.
-						</td>
-						<td>
-							[TODO show Drug 5 information from last regimen]
-						</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td>
-							<input type="button" value="Edit" name="drug-5-edit" />
-						</td>
-						<td>
-							<input type="button" value="Stop" name="drug-5-stop" />
-						</td>
-					</tr>
-					<tr>
-						<td colspan="7">
-							<input type="button" value="Add new drug" name="new-drug" />
-						</td>
-					</tr>
-				</table>
-			</div>
+						<tr>
+							<td>
+								<label>4.</label>
+							</td>
+							<td>
+								<label>[TODO show Drug 4 information from last regimen]</label>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>
+								<input type="button" value="Edit" name="drug-4-edit" />
+							</td>
+							<td>
+								<input type="button" value="Stop" name="drug-4-stop" />
+							</td>
+						</tr>
 
-			<div class="form-group">
-				<label for="steroids-prescribed">Steroids prescribed?</label>
-				<input type="radio" name="steroids-prescribed" value="yes" />Yes
-  				<input type="radio" name="steroids-prescribed" value="no" />No
-  				<input type="radio" name="steroids-prescribed" value="unknown" />Unknown
-			</div>
-		</form>
+						<tr>
+							<td>
+								<label>5.</label>
+							</td>
+							<td>
+								<label>[TODO show Drug 5 information from last regimen]</label>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>
+								<input type="button" value="Edit" name="drug-5-edit" />
+							</td>
+							<td>
+								<input type="button" value="Stop" name="drug-5-stop" />
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2"></td>
+							<td colspan="3" style="text-align: center;">
+								<input type="button" value="Add new drug" name="new-drug" />
+							</td>
+						</tr>
+					</table>
+				</div>
+
+				<div class="form-section">
+					<label for="steroids-prescribed">Steroids prescribed?</label>
+					<div class="secondary-input">
+						<div class="form-group">
+							<input type="radio" name="steroids-prescribed" value="yes" /><label>Yes</label>
+						</div>
+						<div class="form-group">
+							<input type="radio" name="steroids-prescribed" value="no" /><label>No</label>
+						</div>
+						<div class="form-group">
+							<input type="radio" name="steroids-prescribed" value="unknown" /><label>Unknown</label>
+						</div>
+					</div>
+				</div>
+
+				<div id="continue-button-wrap">
+					<input id="continue-button" class="button1" type="button" name="continue" value="Continue" />
+				</div>
+			</form>
+		</div>
 	</body>
 </html>
