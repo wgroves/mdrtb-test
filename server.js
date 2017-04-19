@@ -3,6 +3,7 @@
 // set up ======================================================================
 // get all the tools we need
 var express  = require('express');
+var path  = require('path');
 var app      = express();
 var port     = process.env.PORT || 8080;
 var mongoose = require('mongoose');
@@ -41,6 +42,7 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 
 // routes ======================================================================
 require('./app/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
+app.use(express.static(path.join(__dirname, 'public'))); // public directory is static for CSS and JS
 
 // launch ======================================================================
 app.listen(port);
