@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/Nibley/mdrtb/issues"
   },
-  "homepage": "https://github.com/Nibley/mdrtb#readme"
+  "homepage": "https://github.com/Nibley/mdrtb#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "passport": "^0.3.2"
+  }
 }
