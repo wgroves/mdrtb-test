@@ -11,6 +11,23 @@ body {
   height: 100%;
 }
 
+.btn-google{
+  color:#fff;
+  background-color:#dd4b39;
+  border-color:rgba(0,0,0,0.2);
+  margin-bottom: 10px;
+}
+
+.btn-google span {
+  margin-right: 10px;
+}
+
+.btn-google:focus, .btn-google.focus, .btn-google:hover {
+  color:#fff;
+  background-color:#c23321;
+  border-color:rgba(0,0,0,0.2)
+}
+
 #right {
   background-color: #2B588D;
   height: 100vh;

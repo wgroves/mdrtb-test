@@ -1,26 +1,41 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Node Authentication</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <title>MDR-TB Physician Portal</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-    <style>
-        body         { padding-top:80px; }
-    </style>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-<div class="container">
+      <div id="right">
+        <h1 id="white-text">MDR-TB Physician Portal</h1>
+        <hr>
+        <h3>This is filler text about the purpose of the web app</h3>
+        <div class="form">
+          <form class="register-form">
+            <input type="text" placeholder="name"/>
+            <input type="password" placeholder="password"/>
+            <input type="text" placeholder="email address"/>
+            <button>create</button>
+            <p class="message">Already registered? <a href="#">Sign In</a></p>
+          </form>
 
-    <div class="jumbotron text-center">
-        <h1><span class="fa fa-lock"></span> Node Authentication</h1>
+          <a type="button" href="/auth/google" class="btn-google btn btn-primary btn-lg btn-block">
+            <span class="fa fa-google"></span>Sign in with Google
+          </a>
 
-        <p>Login or Register with:</p>
+          <p class="text-center">or</p>
 
-        <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Local Login</a>
-        <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Local Signup</a>
-        <a href="/auth/google" class="btn btn-danger"><span class="fa fa-google-plus"></span> Google</a>
-    </div>
-
-</div>
+          <form class="login-form">
+            <input type="text" placeholder="Username"/>
+            <input type="password" placeholder="Password"/>
+            <a href="">
+              <button>login</button>
+            </a>
+            <p class="message">Not registered? <a href="#">Create an account</a></p>
+          </form>
+        </div>
+      </div>
 </body>
 </html>
