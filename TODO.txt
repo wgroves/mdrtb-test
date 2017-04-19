@@ -23,3 +23,5 @@ Name and date formats adjusting to locale (dates stored as epoch for sorting, di
 Databse encoding allows for many languages
 
 
+
+email validaton for signup

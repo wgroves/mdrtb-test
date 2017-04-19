@@ -27,14 +27,17 @@
 
           <p class="text-center">or</p>
 
-          <form class="login-form">
-            <input type="text" placeholder="Username"/>
-            <input type="password" placeholder="Password"/>
-            <a href="">
-              <button>login</button>
-            </a>
-            <p class="message">Not registered? <a href="#">Create an account</a></p>
+          <% if (message.length > 0) { %>
+              <div class="alert alert-danger"><%= message %></div>
+          <% } %>
+
+          <form class="login-form" action="/login" method="post">
+            <input type="text" name="email" placeholder="Email"/>
+            <input type="password" name="password" placeholder="Password"/>
+            <button type="submit" class="btn btn-warning btn-lg">Login</button>
+            <p class="message">Not registered? <a href="/signup">Create an account</a></p>
           </form>
+
         </div>
       </div>
 </body>
