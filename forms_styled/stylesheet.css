@@ -1,19 +1,38 @@
+* {
+	margin: 0;
+}
+
 html, body {
 	height: 100%;
 }
 
 #main {
-	padding: 0px 40px 75px 40px;
+	padding: 20px 40px 75px 40px;
+	background-color: white;
+	width: 80%;
+	margin: 0 auto;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
 }
+
+form {
+	padding-top: 30px;
+}
+
+
 
 /* goes around most every input and its corresponding label */
 .form-group {
-	margin: 10px 0px;
+	margin: 20px 0px;
 }
 
 /* goes around inputs that should be closer together */
 .form-section {
 	margin: 20px 0px;
+}
+
+#bottom-button-wrap {
+	margin-top: 50px;
 }
 
 #continue-button-wrap {
@@ -22,14 +41,26 @@ html, body {
 }
 
 #continue-button {
-	width: 120px;
+	width: 220px;
 	position: absolute;
 	right: 30px;
 }
 
+#back-button-wrap {
+	width: 100%;
+	position: relative;
+}
+
+#back-button {
+	width: 220px;
+	position: absolute;
+	left: 30px;
+}
+
+
 label {
 	font-size: 13pt;
-	font-family: 
+	font-family:
 }
 
 input[type="text"], input[type="number"] {

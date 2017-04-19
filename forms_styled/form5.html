@@ -8,16 +8,22 @@
 	</head>
 	<body>
 		<nav id="navbar">
-		    <div id="nav-left">
-		    	<h1 id="white-text">Online Portal</h1>
-		    </div>
+			<div id="nav-left">
+			<h1 id="white-text">Online Portal</h1>
+			</div>
+			<div id="nav-right">
+				<h5 id="white-text">Dashboard</h5>
+				<h5 id="white-text">Update Patient</h5>
+				<h5 id="white-text">New Patient</h5>
+				<h5 id="white-text">Your Account</h5>
+			<div>
 		</nav>
 
 		<div id="main">
 			<h1>5: Initial Laboratory Results</h1>
 			<form>
 				<div class="form-section">
-					<label>Smear</label>
+					<label>Smear:</label>
 
 					<div class="secondary-input">
 						<div class="form-group">
@@ -82,7 +88,7 @@
 					    	<label for="culture-date">Date specimen collected:</label>
 							<input type="text" name="culture-date-date" />
 					    </div>
-					    
+
 					    <label for="culture-type">Specimen type:</label>
 					    <div class="secondary-input">
 					    	<div class="form-group">
@@ -132,7 +138,7 @@
 					    	<label for="culture-date">Date specimen collected:</label>
 							<input type="text" name="culture-date-date" />
 					    </div>
-					    
+
 						<label for="other-detection-method-type">Specimen type:</label>
 					    <div class="secondary-input">
 					    	<div class="form-group">
@@ -435,11 +441,19 @@
 					</table>
 				</div>
 
+				<div id="bottom-button-wrap">
+				<div id="back-button-wrap">
+					<a href="form4.html">
+						<input id="back-button" class="button1" type="button" name="previous" value="Previous" />
+					</a>
+				</div>
+
 				<div id="continue-button-wrap">
 					<a href="form6.html">
 						<input id="continue-button" class="button1" type="button" name="continue" value="Continue" />
 					</a>
 				</div>
+			</div>
 			</form>
 		</div>
 	</body>
