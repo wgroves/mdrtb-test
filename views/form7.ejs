@@ -1,10 +1,8 @@
 <html>
 	<head>
-		<!-- Alex's stylesheet, very basic -->
-		<link rel="stylesheet" type="text/css" href="stylesheet.css" />
-		<!-- Ian's stylesheets -->
-		<link rel="stylesheet" type="text/css" href="home.css" />
-		<link rel="stylesheet" type="text/css" href="login.css" />
+		<link rel="stylesheet" type="text/css" href="css/home.css" />
+		<link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+		<link rel="stylesheet" type="text/css" href="css/login.css" />
 	</head>
 	<body>
 		<nav id="navbar">
@@ -20,156 +18,20 @@
 		</nav>
 
 		<div id="main">
-			<h1>5: Initial Laboratory Results</h1>
+			<h1>7: New DST Results</h1>
 			<form>
 				<div class="form-section">
-					<label>Smear:</label>
-
-					<div class="secondary-input">
-						<div class="form-group">
-							<div class="form-group">
-								<input type="radio" name="smear-done" value="positive" />
-								<label>Positive</label>
-							</div>
-							<div class="form-group">
-								<input type="radio" name="smear-done" value="negative" />
-								<label>Negative</label>
-							</div>
-							<div class="form-group">
-								<input type="radio" name="smear-done" value="not-done" />
-								<label>Not done</label>
-							</div>
-						</div>
-
-						<div class="form-section">
-							<label for="smear-date">Date specimen collected:</label>
-							<input type="text" name="smear-date" />
-						</div>
-
-						<label for="smear-type">Specimen type:</label>
-						<div class="secondary-input">
-							<div class="form-group">
-				    			<input type="radio" name="smear-type" value="sputum" />
-				    			<label>Sputum</label>
-				    		</div>
-				    		<div class="form-group">
-				    			<input type="radio" name="smear-type" value="gastric-aspirate" />
-				    			<label>Gastric aspirate</label>
-				    		</div>
-				    		<div class="form-group">
-				    			<input type="radio" name="smear-type" value="bal" />
-				    			<label>BAL</label>
-				    		</div>
-				    		<div class="form-group">
-				    			<label>Other: </label>
-				    			<input type="text" name="smear-type" />
-				    		</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="form-group">
-					<label for="">Culture:</label>
-					<div class="secondary-input">
-						<div class="form-group">
-							<input type="radio" name="culture-done" value="positive" />
-							<label>Positive</label>
-						</div>
-						<div class="form-group">
-							<input type="radio" name="culture-done" value="negative" />
-							<label>Negative</label>
-						</div>
-						<div class="form-group">
-							<input type="radio" name="culture-done" value="not-done" />
-							<label>Not done</label>
-						</div>
-
-					    <div class="form-section">
-					    	<label for="culture-date">Date specimen collected:</label>
-							<input type="text" name="culture-date-date" />
-					    </div>
-
-					    <label for="culture-type">Specimen type:</label>
-					    <div class="secondary-input">
-					    	<div class="form-group">
-					    		<input type="radio" name="culture-type" value="sputum" />
-					    		<label>Sputum</label>
-					    	</div>
-					    	<div class="form-group">
-					    		<input type="radio" name="culture-type" value="gastric-aspirate" />
-					    		<label>Gastric aspirate</label>
-					    	</div>
-					    	<div class="form-group">
-					    		<input type="radio" name="culture-type" value="bal" />
-					    		<label>BAL</label>
-					    	</div>
-					    	<div class="form-group">
-					    		<label>Other: </label>
-					    		<input type="text" name="culture-type" />
-					    	</div>
-					    </div>
-					</div>
+					<h1><label for="">Conventional DST</label></h1>
 				</div>
 
 				<div class="form-section">
-					<label for="">Other detection method (if done):</label>
-					<div class="secondary-input">
-						<div class="form-group">
-							<label for="other-detection-method">Method:</label>
-							<select name="other-detection-method">
-								<option value="GeneXpert">GeneXpert</option>
-								<option value="other NAAT">other NAAT</option>
-							</select>
-					    </div>
-					    <div class="form-group">
-					    	<input type="radio" name="other-detection-method-detected" value="detected" />
-					    	<label>Detected</label>
-					    </div>
-					    <div class="form-group">
-					    	<input type="radio" name="other-detection-method-detected" value="not-detected" />
-					    	<label>Not detected</label>
-					    </div>
-					    <div class="form-group">
-					    	<input type="radio" name="other-detection-method-detected" value="indeterminate" />
-					    	<label>Indeterminate</label>
-					    </div>
-
-					    <div class="form-section">
-					    	<label for="culture-date">Date specimen collected:</label>
-							<input type="text" name="culture-date-date" />
-					    </div>
-
-						<label for="other-detection-method-type">Specimen type:</label>
-					    <div class="secondary-input">
-					    	<div class="form-group">
-					    		<input type="radio" name="other-detection-method-type" value="sputum" />
-					    		<label>Sputum</label>
-					    	</div>
-
-					    	<div class="form-group">
-					    		<input type="radio" name="other-detection-method-type" value="gastric-aspirate" />
-					    		<label>Gastric aspirate</label>
-					    	</div>
-
-					    	<div class="form-group">
-					    		<input type="radio" name="other-detection-method-type" value="bal" />
-					    		<label>BAL</label>
-					    	</div>
-
-					    	<div class="form-group">
-					    		<label>Other: </label>
-					    		<input type="text" name="other-detection-method-type" />
-					    	</div>
-					    </div>
-					</div>
-				</div>
-
-				<div class="form-section">
-					<h1><label for="">Conventional DST:</label></h1>
 					<div class="form-group">
-				    	<label for="conventional-dst-date">Date specimen collected:</label>
-						<input type="text" name="conventional-dst-date" />
+				    	<label for="date-specimen-collected">Date specimen collected:</label>
+						<input type="text" name="date-specimen-collected" />
 				    </div>
+				</div>
+
+				<div class="form-section">
 					<table>
 						<tr>
 							<th>Drug</th>
@@ -441,15 +303,99 @@
 					</table>
 				</div>
 
+				<div class="form-section">
+					<table>
+						<tr>
+							<td colspan="2"><label for="">Link probe assay</label></td>
+						</tr>
+						<tr>
+							<td>
+								<label for="link-probe-assay-date-specimen-collected">Date specimen collected:</label>
+							</td>
+							<td>
+								<input type="text" name="link-probe-assay-date-specimen-collected" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="link-probe-assay-rpob-mutation">RpoB mutation:</label>
+							</td>
+							<td>
+								<div>
+									<input type="radio" name="link-probe-assay-rpob-mutation" value="yes" /><label>Yes</label>
+								</div>
+								<div>
+									<input type="radio" name="link-probe-assay-rpob-mutation" value="no" /><label>No</label>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="link-probe-assay-katg-mutation">KatG mutation:</label>
+							</td>
+							<td>
+								<div>
+									<input type="radio" name="link-probe-assay-katg-mutation" value="yes" /><label>Yes</label>
+								</div>
+								<div>
+									<input type="radio" name="link-probe-assay-katg-mutation" value="no" /><label>No</label>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="link-probe-assay-inha-mutation">InhA mutation:</label>
+							</td>
+							<td>
+								<div>
+									<input type="radio" name="link-probe-assay-inha-mutation" value="yes" /><label>Yes</label>
+								</div>
+								<div>
+									<input type="radio" name="link-probe-assay-inha-mutation" value="no" /><label>No</label>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+
+				<div class="form-section">
+					<table>
+						<tr>
+							<td colspan="2"><label for="">Gene Xpert</label></td>
+						</tr>
+						<tr>
+							<td>
+								<label for="gene-xpert-date-specimen-collected">Date specimen collected:</label>
+							</td>
+							<td>
+								<input type="text" name="gene-xpert-date-specimen-collected" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="link-probe-assay-rpob-mutation">RpoB mutation:</label>
+							</td>
+							<td>
+								<div>
+									<input type="radio" name="gene-xpert-rpob-mutation" value="yes" /><label>Yes</label>
+								</div>
+								<div>
+									<input type="radio" name="gene-xpert-rpob-mutation" value="no" /><label>No</label>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+
 				<div id="bottom-button-wrap">
 				<div id="back-button-wrap">
-					<a href="form4.html">
+					<a href="form6.html">
 						<input id="back-button" class="button1" type="button" name="previous" value="Previous" />
 					</a>
 				</div>
 
 				<div id="continue-button-wrap">
-					<a href="form6.html">
+					<a href="form8.html">
 						<input id="continue-button" class="button1" type="button" name="continue" value="Continue" />
 					</a>
 				</div>
