@@ -19,7 +19,8 @@
 
 		<div id="main">
 			<h1>9: Treatment Response and Outcome</h1>
-			<form>
+			<form action="/form" method="post">
+				<input type="hidden" name="form_number" value="9">
 				<div class="form-section">
 					<div class="form-group">
 						<label for="report-date">Date of report:</label>
@@ -152,15 +153,14 @@
 				</div>
 				<div id="bottom-button-wrap">
 				<div id="back-button-wrap">
-					<a href="form8.html">
+					<!-- <a href="form8.html"> -->
+					<a href="#">
 						<input id="back-button" class="button1" type="button" name="previous" value="Previous" />
 					</a>
 				</div>
 
 				<div id="continue-button-wrap">
-					<a href="index.html">
-						<input id="continue-button" class="button1" type="button" name="continue" value="Finish" />
-					</a>
+					<input id="continue-button" class="button1" type="submit" name="continue" value="Continue" />
 				</div>
 			</div>
 			</form>

@@ -19,7 +19,8 @@
 
 		<div id="main">
 			<h1>7: New DST Results</h1>
-			<form>
+			<form action="/form" method="post">
+				<input type="hidden" name="form_number" value="7">
 				<div class="form-section">
 					<h1><label for="">Conventional DST</label></h1>
 				</div>
@@ -389,15 +390,14 @@
 
 				<div id="bottom-button-wrap">
 				<div id="back-button-wrap">
-					<a href="form6.html">
+					<!-- <a href="form6.html"> -->
+					<a href="#">
 						<input id="back-button" class="button1" type="button" name="previous" value="Previous" />
 					</a>
 				</div>
 
 				<div id="continue-button-wrap">
-					<a href="form8.html">
-						<input id="continue-button" class="button1" type="button" name="continue" value="Continue" />
-					</a>
+					<input id="continue-button" class="button1" type="submit" name="continue" value="Continue" />
 				</div>
 			</div>
 			</form>

@@ -20,6 +20,77 @@ module.exports = function(app, passport) {
         res.redirect('/');
     });
 
+    // PATIENT FORMS
+    app.get('/form:n', function(req, res) {
+        if(! req.params.n in ['1','2','2b','    ','3','4','5','6','7','8','9','_find_exising_patient']) {
+            res.send('Invalid form', 404);
+        }
+
+        res.render('form'+req.params.n, {});
+    });
+
+    // SUBMITTING PATIENT FORMS
+    app.post('/form', function(req, res) {
+        if(req.body.form_number == "1") {
+
+            res.render('form2', {});
+        
+        } else if (req.body.form_number == "2") {
+            if(req.body['first-line-treatment-failure'] == 'on') {
+                res.render('form2b', {
+                    'contact-with-drug-resistant': req.body['contact-with-drug-resistant']
+                });
+            } else if(req.body['contact-with-drug-resistant'] == 'on') {
+                res.render('form2c', {});
+            } else {
+                res.render('form3', {});
+            }
+        
+        } else if (req.body.form_number == "2b") {
+        
+            res.render('form2c', {});
+        
+        } else if (req.body.form_number == "2c") {
+        
+            res.render('form3', {});
+        
+        } else if (req.body.form_number == "3") {
+        
+            res.render('form4', {});
+        
+        } else if (req.body.form_number == "4") {
+            res.render('form5', {});
+        
+        } else if (req.body.form_number == "5") {
+        
+            res.render('form6', {});
+        
+        } else if (req.body.form_number == "6") {
+        
+            res.render('form7', {});
+        
+        } else if (req.body.form_number == "7") {
+        
+            res.render('form8', {});
+        
+        } else if (req.body.form_number == "8") {
+        
+            res.render('form9', {});
+        
+        } else if (req.body.form_number == "9") {
+        
+            res.render('index', {}); //TODO
+        
+        } else if (req.body.form_number == "_find_exising_patient") {
+        
+            // res.render('form', {});
+            res.send('Not implemented', 404); //TODO
+        } else {
+            res.send('Posted to invalid form', 404);
+            res.end();
+        }
+    });
+
 // =============================================================================
 // AUTHENTICATE (FIRST LOGIN) ==================================================
 // =============================================================================
