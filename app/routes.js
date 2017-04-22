@@ -33,11 +33,15 @@ module.exports = function(app, passport) {
     app.post('/form', function(req, res) {
         if(req.body.form_number == "1") {
 
-            console.log(JSON.stringify(req.body));
-            res.render('form2', {});
+            delete req.body.form_number;
+            res.render('form2', {
+                data: {1: req.body}
+            });
         
         } else if (req.body.form_number == "2") {
-            
+
+            delete req.body.form_number;
+
             if(req.body['first-line-treatment-failure'] == 'on') {
                 res.render('form2b', {
                     options: {
