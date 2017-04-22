@@ -22,7 +22,7 @@ module.exports = function(app, passport) {
 
     // PATIENT FORMS
     app.get('/form:n', function(req, res) {
-        if(! req.params.n in ['1','2','2b','    ','3','4','5','6','7','8','9','_find_exising_patient']) {
+        if(! req.params.n in ['1','2','2b','3','4','5','6','7','8','9','_find_exising_patient']) {
             res.send('Invalid form', 404);
         }
 
@@ -33,12 +33,19 @@ module.exports = function(app, passport) {
     app.post('/form', function(req, res) {
         if(req.body.form_number == "1") {
 
+            console.log(JSON.stringify(req.body));
             res.render('form2', {});
         
         } else if (req.body.form_number == "2") {
+            
             if(req.body['first-line-treatment-failure'] == 'on') {
                 res.render('form2b', {
-                    'contact-with-drug-resistant': req.body['contact-with-drug-resistant']
+                    options: {
+                        'contact-with-drug-resistant': req.body['contact-with-drug-resistant']
+                    },
+                    data: {
+
+                    }
                 });
             } else if(req.body['contact-with-drug-resistant'] == 'on') {
                 res.render('form2c', {});
@@ -47,8 +54,12 @@ module.exports = function(app, passport) {
             }
         
         } else if (req.body.form_number == "2b") {
-        
-            res.render('form2c', {});
+            
+            if(req.body['contact-with-drug-resistant'] == 'on') {
+                res.render('form2c');
+            } else {
+                res.render('form3');
+            }
         
         } else if (req.body.form_number == "2c") {
         

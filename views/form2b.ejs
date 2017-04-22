@@ -21,6 +21,8 @@
 			<h1>2B: Previous Treatment History</h1>
 			<form action="/form" method="post">
 				<input type="hidden" name="form_number" value="2b">
+				<input type="hidden" name="contact-with-drug-resistant" value="<%= options['contact-with-drug-resistant'] %>">
+
 				<div class="form-section">
 					<div class="form-group">
 						<label for="first-line-started-date">Date first-line treatment started:</label>
@@ -136,7 +138,7 @@
 				</div>
 
 				<div id="continue-button-wrap">
-					<input id="continue-button" class="button1" type="submit" name="continue" value="Continue" />
+					<button id="continue-button" class="button1" type="submit">Continue</button>
 				</div>
 			</div>
 			</form>
