@@ -33,8 +33,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 var MongoDBStore = require('connect-mongodb-session') (session);
 var store = new MongoDBStore(
 	{
-		uri: configDB.url;
-		collection: 'mySessions';
+		uri: configDB.url,
+		collection: 'mySessions'
 	});
 
 // Catch errors 
