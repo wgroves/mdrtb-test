@@ -29,6 +29,33 @@ app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser.json()); // get information from html forms
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// sessions ==================================================================
+var MongoDBStore = require('connect-mongodb-session') (session);
+var store = new MongoDBStore(
+	{
+		uri: configDB.url;
+		collection: 'mySessions';
+	});
+
+// Catch errors 
+store.on('error', function(error) {
+  assert.ifError(error);
+  assert.ok(false);
+});
+
+app.use(require('express-session')({
+  secret: 'E27FA8B5984C56177849FF48EAC8B',
+  cookie: {
+    maxAge: 1000 * 60 * 60 * 24 * 2 // 48 hours
+  },
+  store: store,
+  // Boilerplate options, see: 
+  // * https://www.npmjs.com/package/express-session#resave 
+  // * https://www.npmjs.com/package/express-session#saveuninitialized 
+  resave: true,
+  saveUninitialized: true
+}));
+
 app.set('view engine', 'ejs'); // set up ejs for templating
 
 // required for passport
