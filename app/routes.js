@@ -25,7 +25,9 @@ module.exports = function(app, passport) {
         if(! req.params.n in ['1','2','2b','3','4','5','6','7','8','9','_find_exising_patient']) {
             res.send('Invalid form', 404);
         }
-
+        if (req.params.n != 1) {
+            console.log(req.session.last_name);
+        }
         res.render('form'+req.params.n, {errors: []});
     });
 
@@ -48,7 +50,7 @@ module.exports = function(app, passport) {
 
             delete req.body.form_number;
 
-            console.log(req.session.last_name);
+            
             req.session.dst_drug_resistant = req.body['drug-resistance-indicated'];
             req.session.first_line_treatment_failiure = req.body['first-line-treatment-failure'];
 
