@@ -32,7 +32,11 @@ module.exports = function(app, passport) {
     // SUBMITTING PATIENT FORMS
     app.post('/form', function(req, res) {
         if(req.body.form_number == "1") {
-
+            req.session.last_name = req.body['last-name'];
+            req.session.first_name = req.body['first-name'];
+            req.session.middle_name = req.body['middle-name'];
+            req.session.dob = req.body['date-of-birth'];
+            req.session.sex = req.body['sex'];
             delete req.body.form_number;
             res.render('form2', {
                 data: {1: req.body}
@@ -41,6 +45,9 @@ module.exports = function(app, passport) {
         } else if (req.body.form_number == "2") {
 
             delete req.body.form_number;
+            console.log(req.session.last_name);
+            req.session.dst_drug_resistant = req.body['drug-resistance-indicated'];
+            req.session.first_line_treatment_failiure = req.body['first-line-treatment-failure'];
 
             if(req.body['first-line-treatment-failure'] == 'on') {
                 res.render('form2b', {

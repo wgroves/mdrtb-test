@@ -9,7 +9,7 @@ var patientSchema = mongoose.Schema({
 	middle_name: String,
 	dob: Date,
 	sex: String,
-	date_entered: Date
+	local_record_number: Number
 });
 
 // create the model for users and expose it to our app

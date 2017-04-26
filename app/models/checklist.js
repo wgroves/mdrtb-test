@@ -5,7 +5,7 @@ var bcrypt   = require('bcrypt-nodejs');
 var checklist_schema = mongoose.Schema({
 	_patientID: {type: mongoose.Schema.Types.ObjectId, ref: 'Patient'},
 	dst_drug_resistance: Boolean,
-	first-line_treatment_failiure: Boolean,
+	first_line_treatment_failiure: Boolean,
 	case_contact: Boolean,
 	source_case_treatment_failiure: Boolean,
 	tb_death: Boolean,

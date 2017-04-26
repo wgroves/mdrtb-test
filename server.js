@@ -33,15 +33,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 var MongoDBStore = require('connect-mongodb-session') (session);
 var store = new MongoDBStore(
 	{
-		uri: configDB.url;
-		collection: 'mySessions';
+		uri: 'mongodb://localhost:27017/connect_mongodb_session_test',
+		collection: 'mySessions'
 	});
 
 // Catch errors 
-store.on('error', function(error) {
-  assert.ifError(error);
-  assert.ok(false);
-});
+// store.on('error', function(error) {
+//   assert.ifError(error);
+//   assert.ok(false);
+// });
 
 app.use(require('express-session')({
   secret: 'E27FA8B5984C56177849FF48EAC8B',
