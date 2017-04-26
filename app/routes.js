@@ -46,32 +46,30 @@ module.exports = function(app, passport) {
 
             // TODO: 2b and 2c options in session, restore conditional routing
 
-            // if(req.body['first-line-treatment-failure'] == 'on') {
-            //     // res.render('form2b', {
-            //     //     options: {
-            //     //         'contact-with-drug-resistant': req.body['contact-with-drug-resistant']
-            //     //     },
-            //     //     data: {}
-            //     // });
-            // } else if(req.body['contact-with-drug-resistant'] == 'on') {
-            //     res.render('form2c', {});
-            // } else {
-            //     res.render('form3', {});
-            // }
+            req.session['first-line-treatment-failure'] = req.body['first-line-treatment-failure'];;
+            req.session['contact-with-drug-resistant'] = req.body['contact-with-drug-resistant'];
+            req.session.save();
 
-            res.redirect('/form3');
+            if(req.session['first-line-treatment-failure'] == 'on') {
+                res.redirect('/form2b');
+            } else if (req.session['contact-with-drug-resistant'] == 'on') {
+                res.redirect('/form2c');
+            } else {
+                res.redirect('/form3');
+            }
         
         } else if (req.body.form_number == "2b") {
             
-            // if(req.body['contact-with-drug-resistant'] == 'on') {
-            //     res.render('form2c');
-            // } else {
-            //     res.render('form3');
-            // }
+            if(req.session['contact-with-drug-resistant'] == 'on') {
+                res.redirect('/form2c');
+            } else {
+                res.render('form3');
+            }
         
         } else if (req.body.form_number == "2c") {
         
             // res.render('form3', {});
+            res.redirect('form3');
         
         } else if (req.body.form_number == "3") {
         

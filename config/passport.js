@@ -205,9 +205,10 @@ module.exports = function(passport) {
                 user.google.email = (profile.emails[0].value || '').toLowerCase(); // pull the first email
 
                 user.save(function(err) {
-                    if (err)
+                    if (err) {
                         return done(err);
-                        
+                    }
+                    
                     return done(null, user);
                 });
 
