@@ -50,10 +50,12 @@ module.exports = function(app, passport) {
 
             delete req.body.form_number;
 
-            
-            req.session.dst_drug_resistant = req.body['drug-resistance-indicated'];
-            req.session.first_line_treatment_failiure = req.body['first-line-treatment-failure'];
-
+            req.session.dst_drug_resistant = getCheckbox(req.body['drug-resistance-indicated']);
+            req.session.first_line_treatment_failiure = getCheckbox(req.body['first-line-treatment-failure']);
+            req.session.case_contact = getCheckbox(req.body['contact-with-drug-resistant']);
+            req.session.source_case_treatment_failiure = getCheckbox(req.body['resistance-factor-treatment-failure']);
+            req.session.tb_death = getCheckbox(req.body['resistance-factor-died']);
+            req.session.treatment_default = getCheckbox(req.body['resistance-factor-default-or-non-adherence']);
 
             // TODO: 2b and 2c options in session, restore conditional routing
 
@@ -229,6 +231,15 @@ module.exports = function(app, passport) {
 
 
 };
+
+//get boolean value of checkbox
+function getCheckbox(value) {
+    if (value == "on") {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 // route middleware to ensure user is logged in
 function isLoggedIn(req, res, next) {
