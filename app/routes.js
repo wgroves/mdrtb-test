@@ -85,7 +85,10 @@ module.exports = function(app, passport) {
         } else if (req.body.form_number == "5") {
         
             // res.render('form6', {});
-            res.redirect('/form6');
+            // res.redirect('/form6');
+
+            // TODO: write baseline patient information to database here! urgent
+            res.redirect('/index');
         
         } else if (req.body.form_number == "6") {
         
