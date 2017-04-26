@@ -43,7 +43,7 @@ var store = new MongoDBStore(
 //   assert.ok(false);
 // });
 
-app.use(require('express-session')({
+app.use(session({
   secret: 'E27FA8B5984C56177849FF48EAC8B',
   cookie: {
     maxAge: 1000 * 60 * 60 * 24 * 2 // 48 hours

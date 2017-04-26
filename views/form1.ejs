@@ -22,11 +22,13 @@
 			<form action="/form" method="post">
 				<input type="hidden" name="form_number" value="1">
 
-				<% Object.keys(errors).forEach(function(i) { %>
-					<% Object.keys(data[i]).forEach(function(key) { %>
-						<input type="hidden" name="<%- key %>" value="<%- data[i][key] %>" />
+				<% if (typeof errors !== 'undefined') { %>
+					<% Object.keys(errors).forEach(function(i) { %>
+						<% Object.keys(data[i]).forEach(function(key) { %>
+							<input type="hidden" name="<%- key %>" value="<%- data[i][key] %>" />
+						<% }); %>
 					<% }); %>
-				<% }); %>
+				<% } %>
 
 				<div class="form-section">
 					<div class="form-group">
