@@ -47,9 +47,11 @@ module.exports = function(app, passport) {
         } else if (req.body.form_number == "2") {
 
             delete req.body.form_number;
+
             console.log(req.session.last_name);
             req.session.dst_drug_resistant = req.body['drug-resistance-indicated'];
             req.session.first_line_treatment_failiure = req.body['first-line-treatment-failure'];
+
 
             // TODO: 2b and 2c options in session, restore conditional routing
 
