@@ -25,29 +25,27 @@ module.exports = function(app, passport) {
         if(! req.params.n in ['1','2','2b','3','4','5','6','7','8','9','_find_exising_patient']) {
             res.send('Invalid form', 404);
         }
-
         res.render('form'+req.params.n, {errors: []});
     });
 
     // SUBMITTING PATIENT FORMS
     app.post('/form', function(req, res) {
         if(req.body.form_number == "1") {
-
             delete req.body.form_number;
-
-            // res.render('form2', {
-            //     data: {1: req.body}
-            // });
+            if (typeof req.session.form_data == 'undefined') {
+                req.session.form_data = {};
+            }
+            req.session.form_data["1"] = req.body;
+            req.session.save();
+            
             res.redirect('/form2');
-        
         } else if (req.body.form_number == "2") {
-
             delete req.body.form_number;
-
-            // TODO: 2b and 2c options in session, restore conditional routing
 
             req.session['first-line-treatment-failure'] = req.body['first-line-treatment-failure'];;
             req.session['contact-with-drug-resistant'] = req.body['contact-with-drug-resistant'];
+            
+            req.session.form_data["2"] = req.body;
             req.session.save();
 
             if(req.session['first-line-treatment-failure'] == 'on') {
@@ -57,37 +55,42 @@ module.exports = function(app, passport) {
             } else {
                 res.redirect('/form3');
             }
-        
         } else if (req.body.form_number == "2b") {
+            delete req.body.form_number;
+            req.session.form_data["2b"] = req.body;
+            req.session.save();
             
             if(req.session['contact-with-drug-resistant'] == 'on') {
                 res.redirect('/form2c');
             } else {
                 res.render('form3');
             }
-        
         } else if (req.body.form_number == "2c") {
-        
-            // res.render('form3', {});
+            delete req.body.form_number;
+            req.session.form_data["2c"] = req.body;
+            req.session.save();
+            
             res.redirect('form3');
-        
         } else if (req.body.form_number == "3") {
-        
-            // res.render('form4', {});
+            delete req.body.form_number;
+            req.session.form_data["3"] = req.body;
+            req.session.save();
+            
             res.redirect('/form4');
-        
         } else if (req.body.form_number == "4") {
-            // res.render('form5', {});
+            delete req.body.form_number;
+            req.session.form_data["4"] = req.body;
+            req.session.save();
+            
             res.redirect('/form5');
-        
         } else if (req.body.form_number == "5") {
-        
-            // res.render('form6', {});
-            // res.redirect('/form6');
-
+            delete req.body.form_number;
+            req.session.form_data["6"] = req.body;
+            req.session.save();
+            
             // TODO: write baseline patient information to database here! urgent
+            console.log(req.session.form_data);
             res.redirect('/index');
-        
         } else if (req.body.form_number == "6") {
         
             // res.render('form7', {});
