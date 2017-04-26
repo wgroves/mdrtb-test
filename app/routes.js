@@ -70,7 +70,7 @@ module.exports = function(app, passport) {
             //     res.render('form3', {});
             // }
 
-            res.redirect('/form3', {});
+            res.redirect('/form3');
         
         } else if (req.body.form_number == "2b") {
             
