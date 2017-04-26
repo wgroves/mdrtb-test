@@ -85,7 +85,7 @@ module.exports = function(app, passport) {
             res.redirect('/form5');
         } else if (req.body.form_number == "5") {
             delete req.body.form_number;
-            req.session.form_data["6"] = req.body;
+            req.session.form_data["5"] = req.body;
             req.session.save();
             
             // TODO: write baseline patient information to database here! urgent
