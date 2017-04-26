@@ -26,7 +26,7 @@ module.exports = function(app, passport) {
             res.send('Invalid form', 404);
         }
 
-        res.render('form'+req.params.n, {});
+        res.render('form'+req.params.n, {errors: []});
     });
 
     // SUBMITTING PATIENT FORMS
@@ -34,67 +34,80 @@ module.exports = function(app, passport) {
         if(req.body.form_number == "1") {
 
             delete req.body.form_number;
-            res.render('form2', {
-                data: {1: req.body}
-            });
+
+            // res.render('form2', {
+            //     data: {1: req.body}
+            // });
+            res.redirect('/form2');
         
         } else if (req.body.form_number == "2") {
 
             delete req.body.form_number;
 
-            if(req.body['first-line-treatment-failure'] == 'on') {
-                res.render('form2b', {
-                    options: {
-                        'contact-with-drug-resistant': req.body['contact-with-drug-resistant']
-                    },
-                    data: {
+            // TODO: 2b and 2c options in session, restore conditional routing
 
-                    }
-                });
-            } else if(req.body['contact-with-drug-resistant'] == 'on') {
-                res.render('form2c', {});
-            } else {
-                res.render('form3', {});
-            }
+            // if(req.body['first-line-treatment-failure'] == 'on') {
+            //     // res.render('form2b', {
+            //     //     options: {
+            //     //         'contact-with-drug-resistant': req.body['contact-with-drug-resistant']
+            //     //     },
+            //     //     data: {}
+            //     // });
+            // } else if(req.body['contact-with-drug-resistant'] == 'on') {
+            //     res.render('form2c', {});
+            // } else {
+            //     res.render('form3', {});
+            // }
+
+            res.redirect('/form3', {});
         
         } else if (req.body.form_number == "2b") {
             
-            if(req.body['contact-with-drug-resistant'] == 'on') {
-                res.render('form2c');
-            } else {
-                res.render('form3');
-            }
+            // if(req.body['contact-with-drug-resistant'] == 'on') {
+            //     res.render('form2c');
+            // } else {
+            //     res.render('form3');
+            // }
         
         } else if (req.body.form_number == "2c") {
         
-            res.render('form3', {});
+            // res.render('form3', {});
         
         } else if (req.body.form_number == "3") {
         
-            res.render('form4', {});
+            // res.render('form4', {});
+            res.redirect('/form4');
         
         } else if (req.body.form_number == "4") {
-            res.render('form5', {});
+            // res.render('form5', {});
+            res.redirect('/form5');
         
         } else if (req.body.form_number == "5") {
         
-            res.render('form6', {});
+            // res.render('form6', {});
+            res.redirect('/form6');
         
         } else if (req.body.form_number == "6") {
         
-            res.render('form7', {});
+            // res.render('form7', {});
+            res.redirect('/form7');
         
         } else if (req.body.form_number == "7") {
         
-            res.render('form8', {});
+            // res.render('form8', {});
+            res.redirect('/form8');
         
         } else if (req.body.form_number == "8") {
         
-            res.render('form9', {});
+            // res.render('form9', {});
+            res.redirect('/form9');
         
         } else if (req.body.form_number == "9") {
         
-            res.render('index', {}); //TODO
+            //TODO
+
+            // res.render('index', {});
+            res.redirect('/index');
         
         } else if (req.body.form_number == "_find_exising_patient") {
         
