@@ -25,42 +25,28 @@ module.exports = function(app, passport) {
         if(! req.params.n in ['1','2','2b','3','4','5','6','7','8','9','_find_exising_patient']) {
             res.send('Invalid form', 404);
         }
-        if (req.params.n != 1) {
-            console.log(req.session.last_name);
-        }
+
         res.render('form'+req.params.n, {errors: []});
     });
 
     // SUBMITTING PATIENT FORMS
     app.post('/form', function(req, res) {
         if(req.body.form_number == "1") {
-            req.session.last_name = req.body['last-name'];
-            req.session.first_name = req.body['first-name'];
-            req.session.middle_name = req.body['middle-name'];
-            req.session.dob = req.body['date-of-birth'];
-            req.session.sex = req.body['sex'];
-            delete req.body.form_number;
 
-            // res.render('form2', {
-            //     data: {1: req.body}
-            // });
+            delete req.body.form_number;
+            if (typeof req.session.form_data == 'undefined') {
+                req.session.form_data = {};
+            }
+            req.session.form_data["1"] = req.body;
+            req.session.save();
+            
             res.redirect('/form2');
-        
         } else if (req.body.form_number == "2") {
-
             delete req.body.form_number;
-
-            req.session.dst_drug_resistant = getCheckbox(req.body['drug-resistance-indicated']);
-            req.session.first_line_treatment_failiure = getCheckbox(req.body['first-line-treatment-failure']);
-            req.session.case_contact = getCheckbox(req.body['contact-with-drug-resistant']);
-            req.session.source_case_treatment_failiure = getCheckbox(req.body['resistance-factor-treatment-failure']);
-            req.session.tb_death = getCheckbox(req.body['resistance-factor-died']);
-            req.session.treatment_default = getCheckbox(req.body['resistance-factor-default-or-non-adherence']);
-
+            
             // TODO: 2b and 2c options in session, restore conditional routing
-
-            req.session['first-line-treatment-failure'] = req.body['first-line-treatment-failure'];;
-            req.session['contact-with-drug-resistant'] = req.body['contact-with-drug-resistant'];
+            
+            req.session.form_data["2"] = req.body;
             req.session.save();
 
             if(req.session['first-line-treatment-failure'] == 'on') {
@@ -70,37 +56,65 @@ module.exports = function(app, passport) {
             } else {
                 res.redirect('/form3');
             }
-        
         } else if (req.body.form_number == "2b") {
+            delete req.body.form_number;
+            req.session.form_data["2b"] = req.body;
+            req.session.save();
             
             if(req.session['contact-with-drug-resistant'] == 'on') {
                 res.redirect('/form2c');
             } else {
                 res.render('form3');
             }
-        
         } else if (req.body.form_number == "2c") {
-        
-            // res.render('form3', {});
+            delete req.body.form_number;
+            req.session.form_data["2c"] = req.body;
+            req.session.save();
+            
             res.redirect('form3');
-        
         } else if (req.body.form_number == "3") {
-        
-            // res.render('form4', {});
+            delete req.body.form_number;
+            req.session.form_data["3"] = req.body;
+            req.session.save();
+            
             res.redirect('/form4');
-        
         } else if (req.body.form_number == "4") {
-            // res.render('form5', {});
+            delete req.body.form_number;
+            req.session.form_data["4"] = req.body;
+            req.session.save();
+            
             res.redirect('/form5');
-        
         } else if (req.body.form_number == "5") {
-        
-            // res.render('form6', {});
-            // res.redirect('/form6');
-
+            delete req.body.form_number;
+            req.session.form_data["5"] = req.body;
+            req.session.save();
+            
             // TODO: write baseline patient information to database here! urgent
+            console.log(req.session.form_data);
+
+            var connection = mongoose.createConnection(configDB.url);
+
+            last_name = req.session.form_data['1']['last-name'];
+            first_name = req.session.form_data['1']['first-name'];
+            middle_name = req.session.form_data['1']['middle-name'];
+            dob = req.session.form_data['1']['date-of-birth'];
+            sex = req.session.form_data['1']['sex'];
+            local_rec_num = req.session.form_data['1']['local-record-number'];
+
+            var Patient = connection.model('Patient', patientSchema);
+
+            req.session.dst_drug_resistant = getCheckbox(req.body['drug-resistance-indicated']);
+            req.session.first_line_treatment_failiure = getCheckbox(req.body['first-line-treatment-failure']);
+            req.session.case_contact = getCheckbox(req.body['contact-with-drug-resistant']);
+            req.session.source_case_treatment_failiure = getCheckbox(req.body['resistance-factor-treatment-failure']);
+            req.session.tb_death = getCheckbox(req.body['resistance-factor-died']);
+            req.session.treatment_default = getCheckbox(req.body['resistance-factor-default-or-non-adherence']);
+
+            //clear the session
+            store.clear(callback {
+                console.log("error");
+            });
             res.redirect('/index');
-        
         } else if (req.body.form_number == "6") {
         
             // res.render('form7', {});
