@@ -12,11 +12,14 @@ var diagnosis_schema = mongoose.Schema({
 	hiv_status: Boolean,
 	art: Boolean,
 	malnutrition: Boolean,
+	disease_sites: [String],
 	chronic_condition: Boolean,
 	condition_desc: String,
 	radiograph_result: String,
-	radiograph_date: Date
+	radiograph_date: Date,
+	disease_entities: [String],
+	complications: [String]
 });
 
 // create the model for users and expose it to our app
-module.exports = mongoose.model('Diagnosis', characteristics_schema);
+module.exports = mongoose.model('Diagnosis', diagnosis_schema);

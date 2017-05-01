@@ -18,6 +18,6 @@ var complications_schema = mongoose.Schema({
 }, { _id: false });
 
 // create the model for users and expose it to our app
-module.exports = mongoose.model('DiagnosisSite', site_schema);
-module.exports = mongoose.model('DiseaseEntity', entity_schema);
-module.exports = mongoose.model('Complication', complications_schema);
+// module.exports = mongoose.model('DiagnosisSite', site_schema);
+// module.exports = mongoose.model('DiseaseEntity', entity_schema);
+// module.exports = mongoose.model('Complication', complications_schema);

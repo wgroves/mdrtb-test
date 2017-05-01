@@ -1,3 +1,9 @@
+var Patient = require('./models/patient');
+var Characteristic = require('./models/diagnosisCharacteristics');
+var Regimen = require('./models/regimen');
+
+
+
 module.exports = function(app, passport) {
 
 // normal routes ===============================================================
@@ -60,6 +66,8 @@ module.exports = function(app, passport) {
             delete req.body.form_number;
             req.session.form_data["2b"] = req.body;
             req.session.save();
+            console.log(req.session.form_data["2b"]);
+            console.log("here");
             
             if(req.session['contact-with-drug-resistant'] == 'on') {
                 res.redirect('/form2c');
@@ -70,7 +78,7 @@ module.exports = function(app, passport) {
             delete req.body.form_number;
             req.session.form_data["2c"] = req.body;
             req.session.save();
-            
+            console.log(req.session.form_data["2c"]);
             res.redirect('form3');
         } else if (req.body.form_number == "3") {
             delete req.body.form_number;
@@ -94,26 +102,72 @@ module.exports = function(app, passport) {
 
             var connection = mongoose.createConnection(configDB.url);
 
-            last_name = req.session.form_data['1']['last-name'];
-            first_name = req.session.form_data['1']['first-name'];
-            middle_name = req.session.form_data['1']['middle-name'];
-            dob = req.session.form_data['1']['date-of-birth'];
-            sex = req.session.form_data['1']['sex'];
-            local_rec_num = req.session.form_data['1']['local-record-number'];
+            lastName = req.session.form_data['1']['last-name'];
+            firstName = req.session.form_data['1']['first-name'];
+            middleName = req.session.form_data['1']['middle-name'];
+            DOB = req.session.form_data['1']['date-of-birth'];
+            SEX = req.session.form_data['1']['sex'];
+            localRecNum = req.session.form_data['1']['local-record-number'];
 
-            var Patient = connection.model('Patient', patientSchema);
+            var new_patient = new Patient({
+                last_name: lastName,
+                first_name: firstName,
+                middle_name: middleName,
+                dob: DOB,
+                sex: SEX,
+                local_record_number: localRecNum
+            });
 
-            req.session.dst_drug_resistant = getCheckbox(req.body['drug-resistance-indicated']);
-            req.session.first_line_treatment_failiure = getCheckbox(req.body['first-line-treatment-failure']);
-            req.session.case_contact = getCheckbox(req.body['contact-with-drug-resistant']);
-            req.session.source_case_treatment_failiure = getCheckbox(req.body['resistance-factor-treatment-failure']);
-            req.session.tb_death = getCheckbox(req.body['resistance-factor-died']);
-            req.session.treatment_default = getCheckbox(req.body['resistance-factor-default-or-non-adherence']);
+            new_patient.save(function(err) {
+                if (err) throw err;
+                console.log('Patient created!');
+            });
+
+            var patient_id = new_patient._id;
+
+            var new_checkList = new Checklist({
+                _patientID: patient_id,
+                dst_drug_resistant : getCheckbox(req.session.form_data['2']['drug-resistance-indicated']),
+                first_line_treatment_failiure : getCheckbox(req.session.form_data['2']['first-line-treatment-failure']),
+                case_contact : getCheckbox(req.session.form_data['2']['contact-with-drug-resistant']),
+                source_case_treatment_failiure : getCheckbox(req.session.form_data['2']['resistance-factor-treatment-failure']),
+                tb_death : getCheckbox(req.session.form_data['2']['resistance-factor-died']),
+                treatment_default : getCheckbox(req.session.form_data['2']['resistance-factor-default-or-non-adherence']),
+                previous_tb_treatment: getCheckbox(req.session.form_data['2']['resistance-factor-previous-treatment']),
+                case_exposure: getCheckbox(req.session.form_data['2']['resistance-factor-exposure-to-drug-resistant']),
+                high_risk_tb_travel: getCheckbox(req.session.form_data['2']['resistance-factor-travel-to-resistant-prevalent-area'])
+            });
+
+            new_checkList.save(function(err) {
+                if (err) throw err;
+                console.log('Checklist created!');
+            });
+
+            if (req.session.form_data["2b"]) {
+                var old_regimen = new Regimen({
+                    _patientID: patient_id,
+                    date_start: req.session.form_data['2b']['first-line-started-date'],
+                    date_stop: req.session.form_data['2b']['first-line-stopped-date'],
+                    steroids_perscribed: req.session.form_data['2b']['steroids-prescribed']
+                });
+
+                old_regimen.save(function(err) {
+                    if (err) throw err;
+                    console.log('Old regimen created!');
+                });
+
+                console.log
+            }
+
+            if (req.session.form_data["2c"]) {
+
+            }
+            
 
             //clear the session
-            store.clear(callback {
-                console.log("error");
-            });
+            // store.clear(callback() {
+            //     console.log("error");
+            // });
             res.redirect('/index');
         } else if (req.body.form_number == "6") {
         

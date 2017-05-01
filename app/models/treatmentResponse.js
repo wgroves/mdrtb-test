@@ -7,4 +7,4 @@ var outcome_schema = mongoose.Schema({
 }, { _id: false });
 
 // create the model for users and expose it to our app
-module.exports = mongoose.model('TreatmentOutcome', outcome_schema);
+// module.exports = mongoose.model('TreatmentOutcome', outcome_schema);

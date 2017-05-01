@@ -17,6 +17,7 @@ var lineprobe_schema = mongoose.Schema({
 }, { _id: false });
 
 var dst_schema = mongoose.Schema({
+	_patientID: {type: mongoose.Schema.Types.ObjectId, ref 'Patient'},
 	_regimenID: {type: mongoose.Schema.Types.ObjectId, ref: 'Regimen'},
 	date_collected: Date,
 	drug: String,
@@ -29,18 +30,11 @@ var adverse_schema = mongoose.Schema({
 	reaction: String
 }, { _id: false });
 
-var regimen_drug_schmea = mongoose.Schema({
-	_regimenID: {type: mongoose.Schema.Types.ObjectId, ref: 'Regimen'},
-	drug: String,
-	dose: Number,
-	route: String,
-	frequency: Number
-}, { _id: false });
+
 
 // create the model for users and expose it to our app
-module.exports = mongoose.model('GeneXpert', genexpert_schema);
-module.exports = mongoose.model('LineProbe', lineprobe_schema);
-module.exports = mongoose.model('DST', dst_schema);
-module.exports = mongoose.model('AdverseReaction', adverse_schema);
-module.exports = mongoose.model('RegimenDrug', regimen_drug_schmea);
+// module.exports = mongoose.model('GeneXpert', genexpert_schema);
+// module.exports = mongoose.model('LineProbe', lineprobe_schema);
+// module.exports = mongoose.model('DST', dst_schema);
+// module.exports = mongoose.model('AdverseReaction', adverse_schema);
 

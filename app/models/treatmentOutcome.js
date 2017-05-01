@@ -5,6 +5,7 @@ var bcrypt   = require('bcrypt-nodejs');
 var treatment_schema = mongoose.Schema({
 	_patientID: {type: mongoose.Schema.Types.ObjectId, ref: 'Patient'},
 	report_date: Date,
+	responses: [String],
 	outcome: String,
 	outcome_date: Date,
 	tb_death: Boolean
