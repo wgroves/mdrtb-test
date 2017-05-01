@@ -55,9 +55,10 @@ module.exports = function(app, passport) {
             req.session.form_data["2"] = req.body;
             req.session.save();
 
-            if(req.session['first-line-treatment-failure'] == 'on') {
+            if(req.session.form_data["2"]['first-line-treatment-failure'] == 'on') {
                 res.redirect('/form2b');
-            } else if (req.session['contact-with-drug-resistant'] == 'on') {
+                console.log("redirect");
+            } else if (req.session.form_data["2"]['contact-with-drug-resistant'] == 'on') {
                 res.redirect('/form2c');
             } else {
                 res.redirect('/form3');
@@ -69,7 +70,7 @@ module.exports = function(app, passport) {
             console.log(req.session.form_data["2b"]);
             console.log("here");
             
-            if(req.session['contact-with-drug-resistant'] == 'on') {
+            if(req.session.form_data["2"]['contact-with-drug-resistant'] == 'on') {
                 res.redirect('/form2c');
             } else {
                 res.render('form3');
@@ -84,7 +85,7 @@ module.exports = function(app, passport) {
             delete req.body.form_number;
             req.session.form_data["3"] = req.body;
             req.session.save();
-            
+            console.log(req.session.form_data["3"]);
             res.redirect('/form4');
         } else if (req.body.form_number == "4") {
             delete req.body.form_number;
@@ -143,12 +144,35 @@ module.exports = function(app, passport) {
                 console.log('Checklist created!');
             });
 
+            old_regimen;
             if (req.session.form_data["2b"]) {
+                var drug_list = [];
+                var curr_drug = {};
+
+                for (var key in req.session.form_data['2b']) {
+                    if (!req.session.form_data['2b'].hasOwnProperty(key)) {
+                        //The current property is not a direct property of p
+                        continue;
+                    }
+                    if (key.startsWith("Drug")) {
+                        curr_drug.name = req.session.form_data['2b'][key];
+                    } else if (key.startsWith("Dose")) {
+                        curr_drug.dose = req.session.form_data['2b'][key];
+                    } else if (key.startsWith("Route")) {
+                        curr_drug.route = req.session.form_data['2b'][key];
+                    } else if (key.startsWith("Frequency")) {
+                        curr_drug.frequency = req.session.form_data['2b'][key];
+                        drug.push(curr_drug);
+                        curr_drug = {};
+                    }
+                }
+
                 var old_regimen = new Regimen({
                     _patientID: patient_id,
                     date_start: req.session.form_data['2b']['first-line-started-date'],
                     date_stop: req.session.form_data['2b']['first-line-stopped-date'],
-                    steroids_perscribed: req.session.form_data['2b']['steroids-prescribed']
+                    steroids_perscribed: req.session.form_data['2b']['steroids-prescribed'],
+                    drugs: drug_list
                 });
 
                 old_regimen.save(function(err) {
@@ -156,12 +180,31 @@ module.exports = function(app, passport) {
                     console.log('Old regimen created!');
                 });
 
-                console.log
             }
 
             if (req.session.form_data["2c"]) {
+                drug_list = [];
+                curr_drug = {};
+
+                for (var key in req.session.form_data['2c']) {
+                    if (!req.session.form_data['2c'].hasOwnProperty(key)) {
+                        //The current property is not a direct property of p
+                        continue;
+                    }
+                    curr_drug.name = key;
+                    curr_drug.resistant = req.session.form_data['2c'][key];
+                    drug_list.push(curr_drug);
+                    curr_drug = {};
+                }
+
+                var dst_entry = new DST({
+                    _patientID = patient_id,
+                    drugs: drug_list
+                });
 
             }
+
+            //Form 3
             
 
             //clear the session
