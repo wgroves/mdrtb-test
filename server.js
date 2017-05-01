@@ -2,6 +2,7 @@
 
 // set up ======================================================================
 // get all the tools we need
+var assert = require('assert');
 var express  = require('express');
 var path  = require('path');
 var app      = express();
@@ -37,7 +38,7 @@ var store = new MongoDBStore(
 		collection: 'mySessions'
 	});
 
-// Catch errors 
+// Catch errors
 store.on('error', function(error) {
   assert.ifError(error);
   assert.ok(false);
@@ -49,9 +50,9 @@ app.use(session({
     maxAge: 1000 * 60 * 60 * 24 * 2 // 48 hours
   },
   store: store,
-  // Boilerplate options, see: 
-  // * https://www.npmjs.com/package/express-session#resave 
-  // * https://www.npmjs.com/package/express-session#saveuninitialized 
+  // Boilerplate options, see:
+  // * https://www.npmjs.com/package/express-session#resave
+  // * https://www.npmjs.com/package/express-session#saveuninitialized
   resave: true,
   saveUninitialized: true
 }));
