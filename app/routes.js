@@ -41,16 +41,13 @@ module.exports = function(app, passport) {
             res.redirect('/form2');
         } else if (req.body.form_number == "2") {
             delete req.body.form_number;
-
-            req.session['first-line-treatment-failure'] = req.body['first-line-treatment-failure'];;
-            req.session['contact-with-drug-resistant'] = req.body['contact-with-drug-resistant'];
             
             req.session.form_data["2"] = req.body;
             req.session.save();
 
-            if(req.session['first-line-treatment-failure'] == 'on') {
+            if(req.session.form_data['2']['first-line-treatment-failure'] == 'on') {
                 res.redirect('/form2b');
-            } else if (req.session['contact-with-drug-resistant'] == 'on') {
+            } else if (req.session.form_data['2']['contact-with-drug-resistant'] == 'on') {
                 res.redirect('/form2c');
             } else {
                 res.redirect('/form3');
