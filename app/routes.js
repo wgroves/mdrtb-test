@@ -50,15 +50,12 @@ module.exports = function(app, passport) {
         } else if (req.body.form_number == "2") {
             delete req.body.form_number;
             
-            // TODO: 2b and 2c options in session, restore conditional routing
-            
             req.session.form_data["2"] = req.body;
             req.session.save();
 
-            if(req.session.form_data["2"]['first-line-treatment-failure'] == 'on') {
+            if(req.session.form_data['2']['first-line-treatment-failure'] == 'on') {
                 res.redirect('/form2b');
-                console.log("redirect");
-            } else if (req.session.form_data["2"]['contact-with-drug-resistant'] == 'on') {
+            } else if (req.session.form_data['2']['contact-with-drug-resistant'] == 'on') {
                 res.redirect('/form2c');
             } else {
                 res.redirect('/form3');
